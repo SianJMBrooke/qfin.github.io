@@ -1,12 +1,26 @@
 
-- title: "QFIN Kick off - Book Talk by Dr Oliver Haimson (University of Michigan School of Information)"
-  date: 2025-11-25
-  time: "12:00-13:30"
-  location: "Lab42, Amsterdam Science Park (IvI, UvA)"
-  description: "Launch of QFIN with a talk on Trans Technologies followed by discussion and community building."
-  signup_url: "https://docs.google.com/forms/d/e/1FAIpQLSfQrHC87VKDQlnu9qcjB0GCJQoDmdKgyYtlkERWBy_GqCGCUg/viewform?usp=publish-editor"
-  links:
-    - label: "Trans Technologies (MIT Press)"
-      url: "https://mitpress.mit.edu/9780262551861/trans-technologies/"
-    - label: "Lab42 (venue)"
-      url: "https://lab42.uva.nl/"
+- title: "QFIN Launch Event"
+  date: 2026-04-24
+  time: "15:00–18:30"
+  location: "Amsterdam Science Park, L1.01"
+  description: "Join us for the launch of the Queer & Feminist Informatics Network. Exploring how queer & feminist practices can reshape informatics, AI, and digital technologies. Open to students, staff, researchers, artists, activists — anyone curious about queer & feminist informatics."
+  signup_url: "https://docs.google.com/forms/d/e/1FAIpQLScgq7ggljOVLVyLeNbCSD1TisPGPgw7IfzfCVVLvTuo0sI-VQ/viewform?usp=header"
+  schedule:
+    - time: "15:00–16:00"
+      room: "L1.01"
+      title: "Keynote"
+      description: ""
+    - time: "16:00–18:00"
+      room: "L1.04, L1.07, L1.08"
+      title: "3 Parallel Hands-on Workshops"
+      workshops:
+        - title: "Don't Worry Mum, ChatGPT Says I'll Be Fine"
+          description: "How LLMs, web search, and 'no tools' shape what AI know about queer rights."
+        - title: "Face/Off: Adversarial Drag in the Age of Capture"
+          description: "Drag and adversarial makeup, and gender fuckery against facial surveillance."
+        - title: "Worn Otherwise: Designing Something Queerly"
+          description: "Speculative futures of wearables and AI through queer/crip design."
+    - time: "18:00–18:30"
+      room: "L1.01"
+      title: "Community Poster Session"
+      description: "Want to submit a community poster? Optional, deadline April 17."

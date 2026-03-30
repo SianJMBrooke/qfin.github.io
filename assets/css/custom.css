@@ -2,92 +2,127 @@
 ---
 
 /* ================================
-   QFIN — custom theme overrides
-   Header shows ONE hero image
+   QFIN — Cyberpunk / Glitch theme
+   Matches launch poster aesthetic
    ================================ */
 
-/* Optional: config-driven colours from _config.yml */
+/* Config-driven colours from _config.yml */
 :root{
   --title-color: {{ site.title_color | default: '#ffffff' }};
-  --title-blue:  {{ site.title_gradient_blue | default: '#a3d5ff' }};
-  --title-pink:  {{ site.title_gradient_pink | default: '#f5a9d6' }};
+  --title-blue:  {{ site.title_gradient_blue | default: '#00e5ff' }};
+  --title-pink:  {{ site.title_gradient_pink | default: '#ff2d9b' }};
 
-  /* Base palette */
-  --bg:#000000;
-  --txt:#ffffff;
-  --pink:#f5a9d6;
-  --blue:#a3d5ff;
-  --card:#0e0e10;
-  --border:#26262b;
+  /* Base palette — poster-matched */
+  --bg:      #06080f;
+  --txt:     #ffffff;
+  --pink:    #ff2d9b;
+  --cyan:    #00e5ff;
+  --yellow:  #ffd700;
+  --blue:    #00e5ff;
+  --card:    #0c0e18;
+  --border:  #1a1e2e;
+  --glow-pink: rgba(255,45,155,0.35);
+  --glow-cyan: rgba(0,229,255,0.35);
 }
 
 /* Base */
 html, body { background: var(--bg); color: var(--txt); }
-a { color: var(--blue); }
+a { color: var(--cyan); transition: color 0.2s; }
 a:hover { color: var(--pink); }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !important;
-  letter-spacing: 0.2px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
 }
 
 /* Alternate heading colours */
-h2, h4, h6 { color: var(--pink); }
-h3, h5     { color: var(--blue); }
+h2, h4, h6 { color: var(--cyan); }
+h3, h5     { color: var(--pink); }
+
+/* ================================
+   GLITCH SCANLINE OVERLAY
+   ================================ */
+body::after {
+  content: '';
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  pointer-events: none;
+  z-index: 9999;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0,229,255,0.015) 2px,
+    rgba(0,229,255,0.015) 4px
+  );
+}
 
 /* ================================
    HERO HEADER (Cayman .page-header)
-   — single black header with logo
+   — QN monogram on dark bg
    ================================ */
 .page-header{
-  background: #000 !important;
-  background-image: url("{{ '/assets/images/qfin-logo-hero-simple.png' | relative_url }}") !important;
+  background: var(--bg) !important;
+  background-image: url("{{ '/assets/images/qfin-logo-qn-dark.png' | relative_url }}") !important;
   background-repeat: no-repeat !important;
   background-position: center center !important;
   background-size: contain !important;
-
-  min-height: 300px;      /* adjust height if you want bigger/smaller */
-  padding: 0 !important;  /* remove theme padding */
-  border-bottom: 1px solid var(--border);
+  min-height: 320px;
+  padding: 0 !important;
+  border-bottom: 2px solid var(--border);
+  position: relative;
 }
 
-/* Hide theme header text so only the image shows */
+/* Horizontal glitch lines on header */
+.page-header::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background:
+    linear-gradient(transparent 40%, rgba(0,229,255,0.06) 40.5%, transparent 41%),
+    linear-gradient(transparent 55%, rgba(255,45,155,0.06) 55.5%, transparent 56%),
+    linear-gradient(transparent 70%, rgba(255,215,0,0.04) 70.5%, transparent 71%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Hide theme header text */
 .page-header .project-name,
 .page-header .project-tagline{
   display: none !important;
 }
 
-/* Kill any theme green in the header area */
+/* Header buttons */
 .page-header, .page-header * { color: #fff !important; }
 .page-header .btn,
 .page-header a.btn,
 .page-header .btn:visited {
   color: #fff !important;
-  border-color: #fff !important;
+  border-color: var(--cyan) !important;
   background: transparent !important;
 }
 .page-header .btn:hover,
 .page-header a.btn:hover {
   color: #000 !important;
-  background: #fff !important;
-  border-color: #fff !important;
+  background: var(--cyan) !important;
+  border-color: var(--cyan) !important;
 }
 
-/* If an old in-page hero exists, hide it to avoid duplicates */
 .qfin-hero-banner { display: none !important; }
 
 /* ================================
-   Title styles (used below header)
+   Title styles
    ================================ */
-/* Solid title colour (from _config.yml) */
 .trans-title{
   color: var(--title-color);
   -webkit-text-fill-color: var(--title-color);
   text-align: center;
   margin: 0.8rem 0 0.3rem 0;
+  text-shadow: 0 0 20px var(--glow-cyan), 0 0 40px var(--glow-pink);
 }
 
-/* Add .gradient to switch to trans-flag gradient */
+/* Trans-flag gradient text */
 .trans-title.gradient{
   background: linear-gradient(
     180deg,
@@ -113,55 +148,228 @@ h3, h5     { color: var(--blue); }
    ================================ */
 .qfin-wrap { max-width: 1080px; margin: 0 auto; padding: 0 16px; }
 
-.qfin-section { margin: 2rem 0 1rem; }
-.qfin-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; }
+.qfin-section { margin: 2.5rem 0 1.5rem; }
+.qfin-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem; }
 
 .qfin-card {
   background: var(--card);
-  border: 3px solid #fff;   /* was 1px var(--border) */
-  border-radius: 14px;
-  padding: 1rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.25rem;
+  position: relative;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+.qfin-card:hover {
+  border-color: var(--cyan);
+  box-shadow: 0 0 15px var(--glow-cyan), inset 0 0 15px rgba(0,229,255,0.03);
 }
 
-.qfin-section.events .qfin-card,
-.qfin-section.members .qfin-card {
-  border: 3px solid #fff;
-  box-shadow: 0 0 0 2px rgba(255,255,255,0.12);
+/* Special event card full-width style */
+.qfin-card.event-hero {
+  grid-column: 1 / -1;
+  border-left: 3px solid var(--yellow);
+  border-color: var(--yellow);
 }
+.qfin-card.event-hero:hover {
+  box-shadow: 0 0 15px rgba(255,215,0,0.3);
+}
+
 .logo-row { display:flex; justify-content:center; align-items:center; gap:28px; flex-wrap:wrap; margin: 1rem 0 2rem; }
-.logo-row img { display:block; height:56px; width:auto; } /* default size */
-.logo-row img.logo-ivi { height:44px; }                   /* tweak one logo */
+.logo-row img { display:block; height:56px; width:auto; }
+.logo-row img.logo-ivi { height:44px; }
 
-.qfin-meta { color:#d8d8d8; font-size: 0.95rem; }
-.qfin-desc { margin-top: 0.35rem; }
-
-.qfin-btn {
-  display:inline-block; padding:0.55rem 0.9rem; border-radius:10px;
-  border:1px solid var(--border); text-decoration:none; font-weight:700; color: var(--txt);
+.qfin-tagline {
+  text-align: center;
+  color: #c8c8c8;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.95rem;
+  letter-spacing: 0.3px;
 }
-.qfin-btn:hover { border-color: var(--pink); color:#000; background: var(--pink); }
+
+.qfin-meta { color:#b8b8b8; font-size: 0.95rem; }
+.qfin-desc { margin-top: 0.35rem; line-height: 1.6; }
+
+/* Buttons */
+.qfin-btn {
+  display:inline-block; padding:0.55rem 1.1rem; border-radius:6px;
+  border:1px solid var(--cyan); text-decoration:none; font-weight:700;
+  color: var(--cyan);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+  transition: all 0.25s;
+}
+.qfin-btn:hover {
+  border-color: var(--pink);
+  color: #000;
+  background: var(--pink);
+  box-shadow: 0 0 12px var(--glow-pink);
+}
+
+.qfin-btn.btn-yellow {
+  border-color: var(--yellow);
+  color: var(--yellow);
+}
+.qfin-btn.btn-yellow:hover {
+  background: var(--yellow);
+  color: #000;
+  box-shadow: 0 0 12px rgba(255,215,0,0.4);
+}
+
+/* Social link buttons */
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin: 1.5rem 0;
+}
+.social-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.2rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--txt);
+  text-decoration: none;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.25s;
+}
+.social-links a:hover {
+  border-color: var(--cyan);
+  color: var(--cyan);
+  box-shadow: 0 0 10px var(--glow-cyan);
+}
+.social-links a svg { width: 18px; height: 18px; fill: currentColor; }
 
 /* Members */
 .qfin-member { display:grid; grid-template-columns: 84px 1fr; gap:0.9rem; align-items:start; }
-.qfin-member img { width:84px; height:84px; border-radius:50%; object-fit:cover; border:1px solid var(--border); background:#111; }
-.qfin-member h3 { margin: 0 0 0.2rem 0; } /* inherits H3 (blue) */
-.qfin-small { font-size:0.95rem; color:#d6d6d6; }
+.qfin-member img {
+  width:84px; height:84px; border-radius:50%; object-fit:cover;
+  border:2px solid var(--border); background:#111;
+  transition: border-color 0.3s;
+}
+.qfin-member:hover img { border-color: var(--cyan); }
+.qfin-member h3 { margin: 0 0 0.2rem 0; }
+.qfin-small { font-size:0.95rem; color:#b0b0b0; }
 
-.qfin-hr { border:0; height:1px; background: var(--border); margin: 1.5rem 0; }
+.qfin-hr { border:0; height:1px; background: var(--border); margin: 2rem 0; }
+
+/* Schedule timeline */
+.schedule-item {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 1rem;
+  padding: 0.8rem 0;
+  border-bottom: 1px dashed var(--border);
+  align-items: start;
+}
+.schedule-item:last-child { border-bottom: none; }
+.schedule-time {
+  color: var(--yellow);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-weight: 700;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+.schedule-location {
+  color: #888;
+  font-size: 0.8rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+.schedule-title {
+  font-weight: 700;
+  color: var(--txt);
+}
+.schedule-desc {
+  color: #aaa;
+  font-size: 0.9rem;
+  margin-top: 0.25rem;
+}
+
+/* Workshop sub-cards */
+.workshop-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+.workshop-card {
+  background: rgba(0,229,255,0.04);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.8rem;
+  transition: border-color 0.3s;
+}
+.workshop-card:hover { border-color: var(--pink); }
+.workshop-card h4 {
+  font-size: 0.85rem;
+  margin: 0 0 0.3rem 0;
+  color: var(--pink) !important;
+  text-transform: none;
+}
+.workshop-card p {
+  font-size: 0.85rem;
+  color: #aaa;
+  margin: 0;
+}
 
 /* Publications */
 .pub-list { list-style:none; padding-left:0; }
 .pub-list li { border-bottom:1px dashed var(--border); padding:0.6rem 0; }
 .pub-title { color:var(--txt); font-weight:700; }
-.pub-venue { color: var(--blue); }
-.pub-authors { color:#eaeaea; }
+.pub-venue { color: var(--cyan); }
+.pub-authors { color:#ddd; }
 .pub-year { color: var(--pink); font-weight:700; padding-left: 0.25rem; }
-.pub-links a { margin-right:0.5rem; }
+.pub-links a { margin-right:0.5rem; color: var(--cyan); }
+.pub-links a:hover { color: var(--pink); }
+
+/* Mailing list CTA */
+.cta-button {
+  display: inline-block;
+  background: transparent;
+  color: var(--cyan);
+  padding: 0.8em 1.5em;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 700;
+  border: 2px solid var(--cyan);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 0.9rem;
+  transition: all 0.25s;
+}
+.cta-button:hover {
+  background: var(--cyan);
+  color: #000;
+  box-shadow: 0 0 20px var(--glow-cyan);
+}
 
 /* Footer */
-.footer-note { margin-top:2rem; color:#bdbdbd; font-size:0.9rem; }
+.footer-note {
+  margin-top:2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+  color:#777;
+  font-size:0.85rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  text-align: center;
+}
 
-/* Responsive tweak */
+/* Responsive */
 @media (max-width: 640px){
   .page-header{ min-height: 220px; }
+  .schedule-item {
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
+  }
+  .workshop-grid {
+    grid-template-columns: 1fr;
+  }
 }
