@@ -2,99 +2,135 @@
 ---
 
 /* ================================
-   QFIN — Cyberpunk / Glitch theme
-   Matches launch poster aesthetic
+   QFIN — Glitch theme
+   Palette: logo colours only
+   Cyan #97FFFF · Light grey #C5CACF
+   Dark grey #8F8F8F · White · Black
    ================================ */
 
-/* Config-driven colours from _config.yml */
 :root{
-  --title-color: {{ site.title_color | default: '#ffffff' }};
-  --title-blue:  {{ site.title_gradient_blue | default: '#00e5ff' }};
-  --title-pink:  {{ site.title_gradient_pink | default: '#ff2d9b' }};
-
-  /* Base palette — poster-matched */
-  --bg:      #06080f;
-  --txt:     #ffffff;
-  --pink:    #ff2d9b;
-  --cyan:    #00e5ff;
-  --yellow:  #ffd700;
-  --blue:    #00e5ff;
-  --card:    #0c0e18;
-  --border:  #1a1e2e;
-  --glow-pink: rgba(255,45,155,0.35);
-  --glow-cyan: rgba(0,229,255,0.35);
+  --bg:         #000000;
+  --txt:        #ffffff;
+  --cyan:       #97FFFF;
+  --grey-light: #C5CACF;
+  --grey:       #8F8F8F;
+  --card:       #0a0a0a;
+  --border:     #222222;
+  --glow:       rgba(151,255,255,0.3);
 }
 
-/* Base */
-html, body { background: var(--bg); color: var(--txt); }
-a { color: var(--cyan); transition: color 0.2s; }
-a:hover { color: var(--pink); }
+/* ================================
+   BASE
+   ================================ */
+html, body {
+  background: var(--bg);
+  color: var(--txt);
+  margin: 0;
+  padding: 0;
+}
+
+a { color: var(--cyan); transition: color 0.2s, opacity 0.2s; text-decoration: none; }
+a:hover { color: #fff; }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !important;
   letter-spacing: 0.5px;
   text-transform: uppercase;
+  color: var(--cyan);
 }
 
-/* Alternate heading colours */
-h2, h4, h6 { color: var(--cyan); }
-h3, h5     { color: var(--pink); }
+h3, h5 { color: var(--grey-light); }
 
 /* ================================
-   GLITCH SCANLINE OVERLAY
+   GLITCH EDGE BACKGROUNDS
+   Animated static/noise on left + right
    ================================ */
+body::before,
 body::after {
   content: '';
   position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
+  top: 0;
+  bottom: 0;
+  width: 60px;
+  z-index: 9998;
   pointer-events: none;
-  z-index: 9999;
-  background: repeating-linear-gradient(
-    0deg,
-    transparent,
-    transparent 2px,
-    rgba(0,229,255,0.015) 2px,
-    rgba(0,229,255,0.015) 4px
-  );
+}
+body::before {
+  left: 0;
+  background:
+    repeating-linear-gradient(
+      0deg,
+      transparent 0px,
+      transparent 3px,
+      rgba(151,255,255,0.04) 3px,
+      rgba(151,255,255,0.04) 4px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent 0px,
+      transparent 8px,
+      rgba(197,202,207,0.03) 8px,
+      rgba(197,202,207,0.03) 9px
+    );
+  border-right: 1px solid var(--border);
+  animation: glitch-edge-left 4s steps(6) infinite;
+}
+body::after {
+  right: 0;
+  background:
+    repeating-linear-gradient(
+      0deg,
+      transparent 0px,
+      transparent 2px,
+      rgba(151,255,255,0.05) 2px,
+      rgba(151,255,255,0.05) 3px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent 0px,
+      transparent 12px,
+      rgba(143,143,143,0.04) 12px,
+      rgba(143,143,143,0.04) 13px
+    );
+  border-left: 1px solid var(--border);
+  animation: glitch-edge-right 3.5s steps(8) infinite;
+}
+
+@keyframes glitch-edge-left {
+  0%   { background-position: 0 0; }
+  20%  { background-position: 2px -3px; }
+  40%  { background-position: -1px 5px; }
+  60%  { background-position: 3px -2px; }
+  80%  { background-position: -2px 4px; }
+  100% { background-position: 0 0; }
+}
+@keyframes glitch-edge-right {
+  0%   { background-position: 0 0; }
+  16%  { background-position: -3px 2px; }
+  33%  { background-position: 1px -4px; }
+  50%  { background-position: -2px 6px; }
+  66%  { background-position: 3px -1px; }
+  83%  { background-position: -1px 3px; }
+  100% { background-position: 0 0; }
 }
 
 /* ================================
    HERO HEADER (Cayman .page-header)
-   — QN monogram on dark bg
+   — hidden, replaced by inline GIF banner
    ================================ */
 .page-header{
   background: var(--bg) !important;
-  background-image: url("{{ '/assets/images/qfin-logo-qn-dark.png' | relative_url }}") !important;
-  background-repeat: no-repeat !important;
-  background-position: center center !important;
-  background-size: contain !important;
-  min-height: 320px;
+  min-height: 0 !important;
+  height: 0 !important;
   padding: 0 !important;
-  border-bottom: 2px solid var(--border);
-  position: relative;
+  margin: 0 !important;
+  border: none !important;
+  overflow: hidden;
 }
-
-/* Horizontal glitch lines on header */
-.page-header::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background:
-    linear-gradient(transparent 40%, rgba(0,229,255,0.06) 40.5%, transparent 41%),
-    linear-gradient(transparent 55%, rgba(255,45,155,0.06) 55.5%, transparent 56%),
-    linear-gradient(transparent 70%, rgba(255,215,0,0.04) 70.5%, transparent 71%);
-  pointer-events: none;
-  z-index: 1;
-}
-
-/* Hide theme header text */
 .page-header .project-name,
 .page-header .project-tagline{
   display: none !important;
 }
-
-/* Header buttons */
-.page-header, .page-header * { color: #fff !important; }
 .page-header .btn,
 .page-header a.btn,
 .page-header .btn:visited {
@@ -106,161 +142,118 @@ body::after {
 .page-header a.btn:hover {
   color: #000 !important;
   background: var(--cyan) !important;
-  border-color: var(--cyan) !important;
 }
 
 .qfin-hero-banner { display: none !important; }
 
-/* ================================
-   Title styles
-   ================================ */
-.trans-title{
-  color: var(--title-color);
-  -webkit-text-fill-color: var(--title-color);
-  text-align: center;
-  margin: 0.8rem 0 0.3rem 0;
-  text-shadow: 0 0 20px var(--glow-cyan), 0 0 40px var(--glow-pink);
-}
-
-/* Trans-flag gradient text */
-.trans-title.gradient{
-  background: linear-gradient(
-    180deg,
-    var(--title-blue) 0%,
-    var(--title-blue) 20%,
-    var(--title-pink) 20%,
-    var(--title-pink) 40%,
-    #ffffff 40%,
-    #ffffff 60%,
-    var(--title-pink) 60%,
-    var(--title-pink) 80%,
-    var(--title-blue) 80%,
-    var(--title-blue) 100%
-  );
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  -webkit-text-fill-color: transparent;
+/* Inline GIF banner */
+.qfin-banner {
+  display: block;
+  width: 100%;
+  max-width: 720px;
+  margin: 2rem auto 0.5rem;
 }
 
 /* ================================
-   Layout & components
+   TAGLINE
    ================================ */
-.qfin-wrap { max-width: 1080px; margin: 0 auto; padding: 0 16px; }
-
-.qfin-section { margin: 2.5rem 0 1.5rem; }
-.qfin-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem; }
-
-.qfin-card {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 1.25rem;
-  position: relative;
-  transition: border-color 0.3s, box-shadow 0.3s;
-}
-.qfin-card:hover {
-  border-color: var(--cyan);
-  box-shadow: 0 0 15px var(--glow-cyan), inset 0 0 15px rgba(0,229,255,0.03);
-}
-
-/* Special event card full-width style */
-.qfin-card.event-hero {
-  grid-column: 1 / -1;
-  border-left: 3px solid var(--yellow);
-  border-color: var(--yellow);
-}
-.qfin-card.event-hero:hover {
-  box-shadow: 0 0 15px rgba(255,215,0,0.3);
-}
-
-.logo-row { display:flex; justify-content:center; align-items:center; gap:28px; flex-wrap:wrap; margin: 1rem 0 2rem; }
-.logo-row img { display:block; height:56px; width:auto; }
-.logo-row img.logo-ivi { height:44px; }
-
 .qfin-tagline {
   text-align: center;
-  color: #c8c8c8;
+  color: var(--grey-light);
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-  font-size: 0.95rem;
+  font-size: 0.92rem;
   letter-spacing: 0.3px;
+  max-width: 680px;
+  margin: 0.25rem auto 1rem;
 }
 
-.qfin-meta { color:#b8b8b8; font-size: 0.95rem; }
-.qfin-desc { margin-top: 0.35rem; line-height: 1.6; }
-
-/* Buttons */
-.qfin-btn {
-  display:inline-block; padding:0.55rem 1.1rem; border-radius:6px;
-  border:1px solid var(--cyan); text-decoration:none; font-weight:700;
-  color: var(--cyan);
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-  text-transform: uppercase;
-  font-size: 0.85rem;
-  letter-spacing: 0.5px;
-  transition: all 0.25s;
-}
-.qfin-btn:hover {
-  border-color: var(--pink);
-  color: #000;
-  background: var(--pink);
-  box-shadow: 0 0 12px var(--glow-pink);
-}
-
-.qfin-btn.btn-yellow {
-  border-color: var(--yellow);
-  color: var(--yellow);
-}
-.qfin-btn.btn-yellow:hover {
-  background: var(--yellow);
-  color: #000;
-  box-shadow: 0 0 12px rgba(255,215,0,0.4);
-}
-
-/* Social link buttons */
+/* ================================
+   SOCIAL LINK BUTTONS
+   ================================ */
 .social-links {
   display: flex;
   justify-content: center;
-  gap: 1rem;
+  gap: 0.75rem;
   flex-wrap: wrap;
-  margin: 1.5rem 0;
+  margin: 1rem 0 1.5rem;
 }
 .social-links a {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.6rem 1.2rem;
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  color: var(--txt);
+  gap: 0.45rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--cyan);
+  border-radius: 5px;
+  color: var(--cyan);
   text-decoration: none;
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 0.5px;
   transition: all 0.25s;
 }
 .social-links a:hover {
-  border-color: var(--cyan);
-  color: var(--cyan);
-  box-shadow: 0 0 10px var(--glow-cyan);
+  background: var(--cyan);
+  color: #000;
+  box-shadow: 0 0 12px var(--glow);
 }
-.social-links a svg { width: 18px; height: 18px; fill: currentColor; }
+.social-links a svg { width: 16px; height: 16px; fill: currentColor; }
 
-/* Members */
-.qfin-member { display:grid; grid-template-columns: 84px 1fr; gap:0.9rem; align-items:start; }
-.qfin-member img {
-  width:84px; height:84px; border-radius:50%; object-fit:cover;
-  border:2px solid var(--border); background:#111;
+/* ================================
+   LAYOUT
+   ================================ */
+.qfin-wrap { max-width: 960px; margin: 0 auto; padding: 0 80px; }
+
+.qfin-section { margin: 3rem 0 1.5rem; }
+.qfin-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem; }
+
+.qfin-subtle { color: var(--grey-light); line-height: 1.7; }
+
+/* ================================
+   CARDS
+   ================================ */
+.qfin-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1.25rem;
   transition: border-color 0.3s;
 }
-.qfin-member:hover img { border-color: var(--cyan); }
-.qfin-member h3 { margin: 0 0 0.2rem 0; }
-.qfin-small { font-size:0.95rem; color:#b0b0b0; }
+.qfin-card:hover {
+  border-color: var(--cyan);
+}
 
-.qfin-hr { border:0; height:1px; background: var(--border); margin: 2rem 0; }
+.qfin-card.event-hero {
+  grid-column: 1 / -1;
+  border-left: 3px solid var(--cyan);
+}
 
-/* Schedule timeline */
+/* ================================
+   BUTTONS
+   ================================ */
+.qfin-btn {
+  display:inline-block; padding:0.55rem 1.1rem; border-radius:5px;
+  border:1px solid var(--cyan); text-decoration:none; font-weight:700;
+  color: var(--cyan);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.5px;
+  transition: all 0.25s;
+  margin-right: 0.5rem;
+}
+.qfin-btn:hover {
+  color: #000;
+  background: var(--cyan);
+  box-shadow: 0 0 12px var(--glow);
+}
+
+/* ================================
+   EVENT META & SCHEDULE
+   ================================ */
+.qfin-meta { color: var(--grey-light); font-size: 0.95rem; }
+.qfin-desc { margin-top: 0.5rem; line-height: 1.65; color: var(--grey-light); }
+
 .schedule-item {
   display: grid;
   grid-template-columns: 160px 1fr;
@@ -271,14 +264,14 @@ body::after {
 }
 .schedule-item:last-child { border-bottom: none; }
 .schedule-time {
-  color: var(--yellow);
+  color: var(--cyan);
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
   font-weight: 700;
   font-size: 0.9rem;
   white-space: nowrap;
 }
 .schedule-location {
-  color: #888;
+  color: var(--grey);
   font-size: 0.8rem;
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 }
@@ -287,7 +280,7 @@ body::after {
   color: var(--txt);
 }
 .schedule-desc {
-  color: #aaa;
+  color: var(--grey-light);
   font-size: 0.9rem;
   margin-top: 0.25rem;
 }
@@ -300,71 +293,78 @@ body::after {
   margin-top: 0.5rem;
 }
 .workshop-card {
-  background: rgba(0,229,255,0.04);
+  background: rgba(151,255,255,0.03);
   border: 1px solid var(--border);
-  border-radius: 6px;
+  border-radius: 5px;
   padding: 0.8rem;
   transition: border-color 0.3s;
 }
-.workshop-card:hover { border-color: var(--pink); }
+.workshop-card:hover { border-color: var(--grey-light); }
 .workshop-card h4 {
   font-size: 0.85rem;
   margin: 0 0 0.3rem 0;
-  color: var(--pink) !important;
+  color: #fff !important;
   text-transform: none;
 }
 .workshop-card p {
   font-size: 0.85rem;
-  color: #aaa;
+  color: var(--grey-light);
   margin: 0;
 }
 
-/* Publications */
+/* ================================
+   LOGO ROW
+   ================================ */
+.logo-row { display:flex; justify-content:center; align-items:center; gap:28px; flex-wrap:wrap; margin: 1rem 0 2rem; }
+.logo-row img { display:block; height:56px; width:auto; }
+.logo-row img.logo-ivi { height:44px; }
+
+/* ================================
+   MEMBERS
+   ================================ */
+.qfin-member { display:grid; grid-template-columns: 84px 1fr; gap:0.9rem; align-items:start; }
+.qfin-member img {
+  width:84px; height:84px; border-radius:50%; object-fit:cover;
+  border:2px solid var(--border); background:#111;
+  transition: border-color 0.3s;
+}
+.qfin-member:hover img { border-color: var(--cyan); }
+.qfin-member h3 { margin: 0 0 0.2rem 0; color: #fff; }
+.qfin-small { font-size:0.95rem; color: var(--grey-light); }
+
+.qfin-hr { border:0; height:1px; background: var(--border); margin: 2rem 0; }
+
+/* ================================
+   PUBLICATIONS
+   ================================ */
 .pub-list { list-style:none; padding-left:0; }
 .pub-list li { border-bottom:1px dashed var(--border); padding:0.6rem 0; }
 .pub-title { color:var(--txt); font-weight:700; }
 .pub-venue { color: var(--cyan); }
-.pub-authors { color:#ddd; }
-.pub-year { color: var(--pink); font-weight:700; padding-left: 0.25rem; }
+.pub-authors { color: var(--grey-light); }
+.pub-year { color: var(--cyan); font-weight:700; padding-left: 0.25rem; }
 .pub-links a { margin-right:0.5rem; color: var(--cyan); }
-.pub-links a:hover { color: var(--pink); }
+.pub-links a:hover { color: #fff; }
 
-/* Mailing list CTA */
-.cta-button {
-  display: inline-block;
-  background: transparent;
-  color: var(--cyan);
-  padding: 0.8em 1.5em;
-  border-radius: 6px;
-  text-decoration: none;
-  font-weight: 700;
-  border: 2px solid var(--cyan);
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  font-size: 0.9rem;
-  transition: all 0.25s;
-}
-.cta-button:hover {
-  background: var(--cyan);
-  color: #000;
-  box-shadow: 0 0 20px var(--glow-cyan);
-}
-
-/* Footer */
+/* ================================
+   FOOTER
+   ================================ */
 .footer-note {
   margin-top:2.5rem;
   padding-top: 1.5rem;
   border-top: 1px solid var(--border);
-  color:#777;
+  color: var(--grey);
   font-size:0.85rem;
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
   text-align: center;
 }
 
-/* Responsive */
-@media (max-width: 640px){
-  .page-header{ min-height: 220px; }
+/* ================================
+   RESPONSIVE
+   ================================ */
+@media (max-width: 768px){
+  .qfin-wrap { padding: 0 20px; }
+  body::before, body::after { width: 12px; }
   .schedule-item {
     grid-template-columns: 1fr;
     gap: 0.25rem;
