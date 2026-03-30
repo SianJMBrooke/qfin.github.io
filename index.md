@@ -131,7 +131,9 @@ Most events take place in Lab42 at Amsterdam Science Park, with hybrid participa
             {% if event.signup_url %}
               <a class="qfin-btn" href="{{ event.signup_url }}" target="_blank" rel="noopener">Register Here</a>
             {% endif %}
-            <a class="qfin-btn" href="https://docs.google.com/forms/d/e/1FAIpQLScgq7ggljOVLVyLeNbCSD1TisPGPgw7IfzfCVVLvTuo0sI-VQ/viewform?usp=header" target="_blank" rel="noopener">Submit a Poster</a>
+            {% if event.poster_url %}
+              <a class="qfin-btn" href="{{ event.poster_url }}" target="_blank" rel="noopener">Submit a Poster</a>
+            {% endif %}
           </div>
         </div>
       {% endfor %}
