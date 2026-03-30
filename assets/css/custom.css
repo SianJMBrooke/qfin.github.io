@@ -36,82 +36,68 @@ h1, h2, h3, h4, h5, h6 {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !important;
   letter-spacing: 0.5px;
   text-transform: uppercase;
-  color: var(--cyan);
+  color: var(--cyan) !important;
 }
 
-h3, h5 { color: var(--grey-light); }
+h3, h5 { color: var(--grey-light) !important; }
 
 /* ================================
    GLITCH EDGE BACKGROUNDS
-   Animated static/noise on left + right
+   Uses dedicated div elements (not pseudo-elements)
+   to avoid conflicts with Cayman theme
    ================================ */
-body::before,
-body::after {
-  content: '';
+.glitch-edge {
   position: fixed;
   top: 0;
   bottom: 0;
-  width: 60px;
+  width: 50px;
   z-index: 9998;
   pointer-events: none;
-}
-body::before {
-  left: 0;
   background:
     repeating-linear-gradient(
       0deg,
       transparent 0px,
       transparent 3px,
-      rgba(151,255,255,0.04) 3px,
-      rgba(151,255,255,0.04) 4px
+      rgba(151,255,255,0.06) 3px,
+      rgba(151,255,255,0.06) 4px
     ),
-    repeating-linear-gradient(
-      90deg,
-      transparent 0px,
-      transparent 8px,
-      rgba(197,202,207,0.03) 8px,
-      rgba(197,202,207,0.03) 9px
-    );
-  border-right: 1px solid var(--border);
-  animation: glitch-edge-left 4s steps(6) infinite;
-}
-body::after {
-  right: 0;
-  background:
     repeating-linear-gradient(
       0deg,
       transparent 0px,
-      transparent 2px,
-      rgba(151,255,255,0.05) 2px,
-      rgba(151,255,255,0.05) 3px
-    ),
-    repeating-linear-gradient(
-      90deg,
-      transparent 0px,
-      transparent 12px,
-      rgba(143,143,143,0.04) 12px,
-      rgba(143,143,143,0.04) 13px
+      transparent 7px,
+      rgba(197,202,207,0.04) 7px,
+      rgba(197,202,207,0.04) 8px
     );
-  border-left: 1px solid var(--border);
-  animation: glitch-edge-right 3.5s steps(8) infinite;
+}
+.glitch-edge--left {
+  left: 0;
+  border-right: 1px solid rgba(151,255,255,0.15);
+  animation: glitch-edge-left 3s steps(6) infinite;
+}
+.glitch-edge--right {
+  right: 0;
+  border-left: 1px solid rgba(151,255,255,0.15);
+  animation: glitch-edge-right 2.5s steps(8) infinite;
 }
 
 @keyframes glitch-edge-left {
-  0%   { background-position: 0 0; }
-  20%  { background-position: 2px -3px; }
-  40%  { background-position: -1px 5px; }
-  60%  { background-position: 3px -2px; }
-  80%  { background-position: -2px 4px; }
-  100% { background-position: 0 0; }
+  0%   { background-position: 0 0; opacity: 0.7; }
+  15%  { background-position: 2px -6px; opacity: 1; }
+  30%  { background-position: -1px 8px; opacity: 0.5; }
+  50%  { background-position: 3px -3px; opacity: 0.9; }
+  70%  { background-position: -2px 5px; opacity: 0.6; }
+  85%  { background-position: 1px -4px; opacity: 1; }
+  100% { background-position: 0 0; opacity: 0.7; }
 }
 @keyframes glitch-edge-right {
-  0%   { background-position: 0 0; }
-  16%  { background-position: -3px 2px; }
-  33%  { background-position: 1px -4px; }
-  50%  { background-position: -2px 6px; }
-  66%  { background-position: 3px -1px; }
-  83%  { background-position: -1px 3px; }
-  100% { background-position: 0 0; }
+  0%   { background-position: 0 0; opacity: 0.6; }
+  12%  { background-position: -3px 4px; opacity: 1; }
+  25%  { background-position: 1px -7px; opacity: 0.4; }
+  40%  { background-position: -2px 9px; opacity: 0.8; }
+  55%  { background-position: 3px -2px; opacity: 1; }
+  70%  { background-position: -1px 5px; opacity: 0.5; }
+  85%  { background-position: 2px -6px; opacity: 0.9; }
+  100% { background-position: 0 0; opacity: 0.6; }
 }
 
 /* ================================
@@ -146,12 +132,18 @@ body::after {
 
 .qfin-hero-banner { display: none !important; }
 
-/* Inline GIF banner */
+/* Inline GIF banner — full width, edge to edge */
+.qfin-banner-wrap {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  background: #000;
+  overflow: hidden;
+}
 .qfin-banner {
   display: block;
   width: 100%;
-  max-width: 720px;
-  margin: 2rem auto 0.5rem;
+  height: auto;
+  margin: 0;
 }
 
 /* ================================
@@ -364,7 +356,7 @@ body::after {
    ================================ */
 @media (max-width: 768px){
   .qfin-wrap { padding: 0 20px; }
-  body::before, body::after { width: 12px; }
+  .glitch-edge { width: 12px; }
   .schedule-item {
     grid-template-columns: 1fr;
     gap: 0.25rem;

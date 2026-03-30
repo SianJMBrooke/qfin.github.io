@@ -22,8 +22,12 @@ title: "QFIN - Queer and Feminist Informatics Network"
   .logo-row img.logo-ivi { height:44px; }
 </style>
 
-<!-- Glitch GIF banner -->
-<div style="text-align:center;">
+<!-- Glitch edge overlays -->
+<div class="glitch-edge glitch-edge--left"></div>
+<div class="glitch-edge glitch-edge--right"></div>
+
+<!-- Glitch GIF banner — full width -->
+<div class="qfin-banner-wrap">
   <img src="{{ '/assets/images/qfin-glitch-banner.gif' | relative_url }}" alt="QFIN - Queer and Feminist Informatics Network" class="qfin-banner">
 </div>
 <p class="qfin-tagline">
