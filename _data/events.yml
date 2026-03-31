@@ -11,7 +11,7 @@
       room: "L1.01"
       title: "Keynote"
       description: ""
-    - time: "16:00–18:00"
+    - time: "16:15–17:15"
       room: "L1.04, L1.07, L1.08"
       title: "3 Parallel Hands-on Workshops"
       workshops:
@@ -21,7 +21,7 @@
           description: "Drag and adversarial makeup, and gender fuckery against facial surveillance."
         - title: "Worn Otherwise: Designing Something Queerly"
           description: "Speculative futures of wearables and AI through queer/crip design."
-    - time: "18:00–18:30"
+    - time: "17:25–18:30"
       room: "L1.01"
       title: "Community Poster Session"
       description: "Want to submit a community poster? Optional, deadline April 17."
