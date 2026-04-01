@@ -9,8 +9,8 @@
   schedule:
     - time: "15:00–16:00"
       room: "L1.01"
-      title: "Keynote"
-      description: ""
+      title: "Keynote — Dr Kay Kender (they/them): Datafied Blockbusterisation"
+      description: "The structures and design characteristics of platformed cultural production are geared towards Blockbusterisation: making that which is popular with the largest audience more and more prominent, while increasingly obscuring marginalised expressions. This keynote discusses three case studies of Blockbusterisation in the context of data-driven technologies: GenAI, 3D-model databases, and social media."
     - time: "16:15–17:15"
       room: "L1.04, L1.07, L1.08"
       title: "3 Parallel Hands-on Workshops"
