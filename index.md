@@ -80,7 +80,7 @@ Most events take place in Lab42 at Amsterdam Science Park, with hybrid participa
   <!-- UPCOMING EVENTS -->
   <div class="qfin-section">
     <h2>Upcoming Events</h2>
-    {% assign upcoming = site.data.events | sort: 'date' %}
+    {% assign upcoming = site.data.events | sort: 'date'| reverse %}
     {% if upcoming and upcoming.size > 0 %}
       {% for event in upcoming %}
         <div class="qfin-card event-hero">
