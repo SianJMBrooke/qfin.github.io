@@ -39,6 +39,12 @@ permalink: /events/
   {% endif %}
 
   <div class="qfin-section">
+    <h2>From the Launch</h2>
+    <p class="qfin-subtle">Setting up for the QFIN launch at Lab42 on 24 April 2026.</p>
+    {% include popup-gallery.html %}
+  </div>
+
+  <div class="qfin-section">
     <h2>Past Events</h2>
     {% assign past_events = site.data.events | sort: "date" | reverse %}
     {% for event in past_events %}

@@ -597,3 +597,150 @@ a.qfin-sponsor img { height: 40px; width: auto; align-self: flex-start; margin-b
 }
 a.qfin-sponsor:hover .qfin-sponsor-name { color: var(--pink); }
 .qfin-subhead { margin: 1.5rem 0 0.75rem; font-size: 0.85rem; color: var(--purple) !important; }
+
+/* ================================
+   1998 POP-UP WINDOW GALLERY
+   ================================ */
+.w98-desktop {
+  position: relative;
+  width: min(1100px, calc(100vw - 140px));
+  left: 50%;
+  transform: translateX(-50%);
+  height: 680px;
+  margin: 1.5rem 0 0.5rem;
+  background: #008080;
+  border: 2px solid;
+  border-color: #808080 #fff #fff #808080;
+  overflow: hidden;
+  font: 12px "MS Sans Serif", "Microsoft Sans Serif", Tahoma, Geneva, Verdana, sans-serif;
+  color: #000;
+}
+.w98-window {
+  position: absolute;
+  width: 240px;
+  background: #c0c0c0;
+  padding: 3px;
+  border: 1px solid;
+  border-color: #dfdfdf #000 #000 #dfdfdf;
+  box-shadow: inset 1px 1px #fff, inset -1px -1px #808080, 3px 3px 0 rgba(0,0,0,0.35);
+  user-select: none;
+  -webkit-user-select: none;
+}
+.w98-window.is-hidden { display: none; }
+.w98-window.is-max {
+  left: 50% !important;
+  top: 8px !important;
+  transform: translateX(-50%);
+  width: min(460px, 94%);
+  z-index: 999 !important;
+}
+.w98-titlebar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 6px;
+  padding: 2px 2px 2px 4px;
+  background: linear-gradient(90deg, #808080, #b5b5b5);
+  color: #d4d0c8;
+  font-weight: bold;
+  cursor: move;
+  touch-action: none;
+}
+.w98-window.is-active .w98-titlebar { background: linear-gradient(90deg, #000080, #1084d0); color: #fff; }
+.w98-title { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 12px; }
+.w98-controls { display: inline-flex; flex-shrink: 0; }
+.w98-btn {
+  width: 16px; height: 14px; padding: 0; margin-left: 2px;
+  display: inline-flex; align-items: center; justify-content: center;
+  background: #c0c0c0; color: #000;
+  border: 1px solid; border-color: #fff #000 #000 #fff;
+  box-shadow: inset -1px -1px #808080, inset 1px 1px #dfdfdf;
+  font: bold 9px/1 Tahoma, Verdana, sans-serif;
+  cursor: pointer;
+}
+.w98-btn:active, .w98-button:active { border-color: #000 #fff #fff #000; box-shadow: inset 1px 1px #808080; }
+.w98-menubar { display: flex; gap: 12px; padding: 3px 4px 2px; font-size: 12px; }
+.w98-body {
+  background: #fff;
+  border: 2px solid;
+  border-color: #808080 #fff #fff #808080;
+  box-shadow: inset 1px 1px #000;
+  line-height: 0;
+}
+.w98-body img { width: 100%; height: auto; display: block; pointer-events: none; }
+.w98-statusbar { margin-top: 3px; }
+.w98-statusbar span {
+  display: block;
+  padding: 1px 4px;
+  border: 1px solid; border-color: #808080 #fff #fff #808080;
+  font-size: 11px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+
+/* Dialog */
+.w98-dialog { width: 320px; }
+.w98-dialog-body {
+  display: flex; gap: 12px; align-items: flex-start;
+  background: transparent; border: 0; box-shadow: none;
+  padding: 14px 10px 4px; line-height: 1.45;
+}
+.w98-dialog-body p { margin: 0; font-size: 12px; color: #000; }
+.w98-icon-info {
+  flex: 0 0 32px; width: 32px; height: 32px; border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #6b9bff, #0000b0);
+  border: 1px solid #000; color: #fff; text-align: center;
+  font: bold italic 20px/31px Georgia, "Times New Roman", serif;
+}
+.w98-dialog-actions { text-align: center; padding: 8px 0 8px; }
+.w98-button {
+  min-width: 75px; height: 23px;
+  background: #c0c0c0; color: #000;
+  border: 1px solid; border-color: #fff #000 #000 #fff;
+  box-shadow: inset -1px -1px #808080, inset 1px 1px #dfdfdf, 0 0 0 1px #000;
+  font: 12px "MS Sans Serif", "Microsoft Sans Serif", Tahoma, sans-serif;
+  cursor: pointer;
+}
+
+/* Taskbar */
+.w98-taskbar {
+  position: absolute; left: 0; right: 0; bottom: 0; z-index: 100000;
+  display: flex; align-items: center; gap: 4px;
+  height: 30px; padding: 2px 3px;
+  background: #c0c0c0;
+  border-top: 1px solid #dfdfdf; box-shadow: inset 0 1px #fff;
+}
+.w98-start, .w98-task {
+  display: inline-flex; align-items: center; gap: 4px;
+  height: 22px; padding: 0 6px;
+  background: #c0c0c0; color: #000;
+  border: 1px solid; border-color: #fff #000 #000 #fff;
+  box-shadow: inset -1px -1px #808080, inset 1px 1px #dfdfdf;
+  font: 11px "MS Sans Serif", "Microsoft Sans Serif", Tahoma, sans-serif;
+}
+.w98-start { font-weight: bold; flex-shrink: 0; }
+.w98-start img { height: 12px; width: auto; }
+.w98-tasks { display: flex; gap: 3px; flex: 1; min-width: 0; overflow: hidden; }
+.w98-task { flex: 0 1 140px; min-width: 0; text-align: left; cursor: pointer; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; display: block; line-height: 20px; }
+.w98-task.is-pressed {
+  border-color: #000 #fff #fff #000; box-shadow: inset 1px 1px #808080;
+  background: repeating-conic-gradient(#c0c0c0 0 25%, #fff 0 50%) 0 0 / 2px 2px;
+  font-weight: bold;
+}
+.w98-clock {
+  flex-shrink: 0; padding: 0 8px; height: 22px; line-height: 20px;
+  border: 1px solid; border-color: #808080 #fff #fff #808080; font-size: 11px;
+}
+
+.w98-mobile-only { display: none; }
+@media (max-width: 768px) {
+  .w98-desk-only { display: none; }
+  .w98-mobile-only { display: inline; }
+  .w98-desktop {
+    width: auto; left: auto; transform: none; height: auto;
+    display: flex; flex-direction: column; align-items: center; gap: 14px;
+    padding: 12px 10px 46px;
+  }
+  .w98-window, .w98-dialog { position: relative; left: auto !important; top: auto !important; width: min(300px, 100%); }
+  .w98-window.is-max { transform: none; width: 100%; }
+  .w98-titlebar { cursor: default; }
+  .w98-task { flex-basis: 90px; }
+}

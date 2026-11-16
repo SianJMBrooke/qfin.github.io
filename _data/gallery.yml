@@ -1,0 +1,39 @@
+# Photos shown as 1998-style pop-up windows on the Events page.
+# x = distance from the left as a % of the area, y = distance from the top in px.
+# Photos have had their location data removed. Only add photos that people
+# in them have agreed to.
+
+- file: "/assets/images/launch/launch-atrium.jpg"
+  title: "atrium.jpg"
+  caption: "Setting up in the Lab42 atrium"
+  alt: "Round tables with black tablecloths set out in the Lab42 atrium, with a green plant wall behind"
+  x: 1
+  y: 70
+
+- file: "/assets/images/launch/launch-petals.jpg"
+  title: "petals.jpg"
+  caption: "Rainbow 3D prints on the tables"
+  alt: "Rainbow-coloured 3D-printed petal shapes scattered on a black tablecloth"
+  x: 21
+  y: 190
+
+- file: "/assets/images/launch/launch-stickers.jpg"
+  title: "stickers.bmp"
+  caption: "Stickers and badges"
+  alt: "A hand holding a red tube next to QFIN stickers and badges on a black tablecloth"
+  x: 41
+  y: 250
+
+- file: "/assets/images/launch/launch-catering.jpg"
+  title: "borrel.jpg"
+  caption: "Snacks for the borrel"
+  alt: "Platters of sandwiches and vegetables on a table"
+  x: 60
+  y: 110
+
+- file: "/assets/images/launch/launch-lab42.jpg"
+  title: "lab42_from_above.jpg"
+  caption: "Lab42 from the top floor"
+  alt: "The Lab42 atrium seen from an upper floor, with tables and plants below"
+  x: 79
+  y: 230

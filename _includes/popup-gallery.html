@@ -1,0 +1,112 @@
+{% comment %}
+  Photos as draggable 1998-style pop-up windows. Data: _data/gallery.yml
+{% endcomment %}
+{% if site.data.gallery and site.data.gallery.size > 0 %}
+<div class="w98-desktop" data-w98-desktop>
+
+  <div class="w98-window w98-dialog" style="left: min(36%, calc(100% - 330px)); top: 12px;" data-w98-window data-w98-title="QFIN.exe">
+    <div class="w98-titlebar" data-w98-handle>
+      <span class="w98-title">QFIN.exe</span>
+      <span class="w98-controls"><button type="button" class="w98-btn" aria-label="Close" data-w98-close>&#x2715;</button></span>
+    </div>
+    <div class="w98-body w98-dialog-body">
+      <span class="w98-icon-info" aria-hidden="true">i</span>
+      <p>QFIN launched successfully on 24 April 2026 at Lab42.<br><span class="w98-desk-only">Drag the windows around to see more.</span><span class="w98-mobile-only">Scroll down to see more.</span></p>
+    </div>
+    <div class="w98-dialog-actions"><button type="button" class="w98-button" data-w98-close>OK</button></div>
+  </div>
+
+  {% for p in site.data.gallery %}
+  <div class="w98-window" style="left: min({{ p.x }}%, calc(100% - 260px)); top: {{ p.y }}px;" data-w98-window data-w98-title="{{ p.title }}">
+    <div class="w98-titlebar" data-w98-handle>
+      <span class="w98-title">{{ p.title }}</span>
+      <span class="w98-controls">
+        <button type="button" class="w98-btn" aria-label="Minimise" data-w98-min>_</button>
+        <button type="button" class="w98-btn" aria-label="Maximise" data-w98-max>&#x25A1;</button>
+        <button type="button" class="w98-btn" aria-label="Close" data-w98-close>&#x2715;</button>
+      </span>
+    </div>
+    <div class="w98-menubar" aria-hidden="true"><span><u>F</u>ile</span><span><u>E</u>dit</span><span><u>V</u>iew</span><span><u>H</u>elp</span></div>
+    <div class="w98-body">
+      <img src="{{ p.file | relative_url }}" alt="{{ p.alt }}" loading="lazy" draggable="false">
+    </div>
+    <div class="w98-statusbar"><span>{{ p.caption }}</span></div>
+  </div>
+  {% endfor %}
+
+  <div class="w98-taskbar" data-w98-taskbar>
+    <span class="w98-start"><img src="{{ '/assets/images/qfin-logo-compact.png' | relative_url }}" alt="">Start</span>
+    <span class="w98-tasks" data-w98-tasks></span>
+    <span class="w98-clock">24/04/26</span>
+  </div>
+</div>
+
+<script>
+(function () {
+  var desk = document.querySelector('[data-w98-desktop]');
+  if (!desk) return;
+  var wins = Array.prototype.slice.call(desk.querySelectorAll('[data-w98-window]'));
+  var tasks = desk.querySelector('[data-w98-tasks]');
+  var z = 10;
+
+  function focusWin(w) {
+    z += 1; w.style.zIndex = z;
+    wins.forEach(function (o) { o.classList.toggle('is-active', o === w); });
+    syncTasks();
+  }
+  function hide(w) {
+    w.classList.add('is-hidden');
+    var top = wins.filter(function (o) { return !o.classList.contains('is-hidden'); })
+                  .sort(function (a, b) { return (+b.style.zIndex) - (+a.style.zIndex); })[0];
+    if (top) { focusWin(top); } else { wins.forEach(function (o) { o.classList.remove('is-active'); }); syncTasks(); }
+  }
+  function show(w) { w.classList.remove('is-hidden'); focusWin(w); }
+
+  function syncTasks() {
+    tasks.innerHTML = '';
+    wins.forEach(function (w) {
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'w98-task' + (w.classList.contains('is-active') && !w.classList.contains('is-hidden') ? ' is-pressed' : '');
+      b.textContent = w.getAttribute('data-w98-title');
+      b.addEventListener('click', function () {
+        if (w.classList.contains('is-hidden')) { show(w); }
+        else if (w.classList.contains('is-active')) { hide(w); }
+        else { focusWin(w); }
+      });
+      tasks.appendChild(b);
+    });
+  }
+
+  wins.forEach(function (w, i) {
+    w.style.zIndex = z + i;
+    w.addEventListener('pointerdown', function () { focusWin(w); });
+    Array.prototype.forEach.call(w.querySelectorAll('[data-w98-close],[data-w98-min]'), function (b) {
+      b.addEventListener('click', function (e) { e.stopPropagation(); hide(w); });
+    });
+    var max = w.querySelector('[data-w98-max]');
+    if (max) max.addEventListener('click', function (e) { e.stopPropagation(); w.classList.toggle('is-max'); focusWin(w); });
+
+    var handle = w.querySelector('[data-w98-handle]');
+    var sx, sy, ox, oy, dragging = false;
+    handle.addEventListener('pointerdown', function (e) {
+      if (e.target.closest('button') || window.matchMedia('(max-width: 768px)').matches || w.classList.contains('is-max')) return;
+      dragging = true; sx = e.clientX; sy = e.clientY; ox = w.offsetLeft; oy = w.offsetTop;
+      try { handle.setPointerCapture(e.pointerId); } catch (err) {}
+      e.preventDefault();
+    });
+    handle.addEventListener('pointermove', function (e) {
+      if (!dragging) return;
+      var nx = Math.max(-40, Math.min(desk.clientWidth - 60, ox + e.clientX - sx));
+      var ny = Math.max(0, Math.min(desk.clientHeight - 60, oy + e.clientY - sy));
+      w.style.left = nx + 'px'; w.style.top = ny + 'px';
+    });
+    function end() { dragging = false; }
+    handle.addEventListener('pointerup', end);
+    handle.addEventListener('pointercancel', end);
+  });
+  z = 10 + wins.length;
+  focusWin(wins[0]);
+})();
+</script>
+{% endif %}
