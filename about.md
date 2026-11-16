@@ -47,10 +47,6 @@ Most events take place in Lab42 at Amsterdam Science Park, with hybrid participa
   </div>
   {% endif %}
 
-  <div class="logo-row">
-    <img src="{{ '/assets/images/dilab-logo-white.png' | relative_url }}" alt="DILab">
-    <img src="{{ '/assets/images/uva-ivi-white.png' | relative_url }}" alt="UvA Informatics Institute" class="logo-ivi">
-  </div>
 
   {% include qfin-footer.html %}
 </div>

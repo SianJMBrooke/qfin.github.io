@@ -908,3 +908,7 @@ a.qfin-cta h3, a.qfin-sponsor .qfin-sponsor-name { font-family: var(--w-font) !i
 
 /* Cayman's own footer is replaced by the status bar */
 .site-footer { display: none; }
+
+/* Static logo banner on the home page */
+.qfin-banner-wrap { padding: 2rem 0 0.5rem; }
+.qfin-banner { width: min(760px, 88vw); margin: 0 auto; }

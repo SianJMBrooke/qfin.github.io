@@ -3,18 +3,11 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;600&display=swap">
 <link rel="stylesheet" href="{{ '/assets/css/custom.css' | relative_url }}">
 
-<!-- Glitch edge overlays -->
-<div class="glitch-edge glitch-edge--left"></div>
-<div class="glitch-edge glitch-edge--right"></div>
-
 {% if include.home %}
-<!-- Glitch GIF banner, full width (home page only) -->
+<!-- Logo banner (home page only) -->
 <div class="qfin-banner-wrap">
-  <img src="{{ '/assets/images/qfin-glitch-banner.gif' | relative_url }}" alt="QFIN - Queer and Feminist Informatics Network" class="qfin-banner">
+  <img src="{{ '/assets/images/qfin-logo-static.jpg' | relative_url }}" alt="QFIN - Queer and Feminist Informatics Network" class="qfin-banner">
 </div>
-<p class="qfin-tagline">
-  An open, inclusive network for queer and feminist approaches to computing, broadening participation in computing education and research.
-</p>
 {% else %}
 <!-- Compact header on inner pages -->
 <div class="qfin-compact-header">

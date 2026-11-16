@@ -10,7 +10,7 @@ title: "QFIN - Queer and Feminist Informatics Network"
   <div class="qfin-section">
     <h2>Welcome</h2>
     <p class="qfin-subtle">
-      The Queer and Feminist Informatics Network (QFIN) brings together researchers, students and allies working on queer and feminist approaches to informatics, AI and computing, and works to broaden who takes part in computing education and research. We run talks, workshops, reading groups and community events, mostly in Lab42 at Amsterdam Science Park. Membership is informal and everyone is welcome.
+      The Queer and Feminist Informatics Network (QFIN) is an open, inclusive network for queer and feminist approaches to computing. We bring together researchers, students and allies working across informatics, AI and data, and we work to broaden who takes part in computing education and research. We run talks, workshops, reading groups and community events, mostly in Lab42 at Amsterdam Science Park. Membership is informal and everyone is welcome.
     </p>
     <p>
       <a href="{{ '/about/' | relative_url }}">Read more about QFIN</a>
@@ -55,10 +55,6 @@ title: "QFIN - Queer and Feminist Informatics Network"
     </div>
   </div>
 
-  <div class="logo-row">
-    <img src="{{ '/assets/images/dilab-logo-white.png' | relative_url }}" alt="DILab">
-    <img src="{{ '/assets/images/uva-ivi-white.png' | relative_url }}" alt="UvA Informatics Institute" class="logo-ivi">
-  </div>
 
   {% include qfin-footer.html %}
 </div>
