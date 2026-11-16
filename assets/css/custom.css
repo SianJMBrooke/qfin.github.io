@@ -925,3 +925,7 @@ a.qfin-cta h3, a.qfin-sponsor .qfin-sponsor-name { font-family: var(--w-font) !i
 .qfin-announcements { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); margin-bottom: 0.75rem; }
 .qfin-announcement h3 { margin: 0.2rem 0 0.4rem; }
 .qfin-announcement .qfin-desc p { margin: 0 0 0.5rem; }
+.qfin-announcement-more summary { cursor: pointer; color: var(--cyan); list-style: none; }
+.qfin-announcement-more summary::-webkit-details-marker { display: none; }
+.qfin-announcement-more[open] summary { display: none; }
+.qfin-desc:has(> .qfin-announcement-more[open]) > p:first-child { display: none; }

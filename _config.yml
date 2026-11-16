@@ -20,6 +20,7 @@ kramdown:
 
 exclude:
   - README.md
+  - tools
 
 # ------------------------------------------------------------
 # QFIN settings
@@ -34,6 +35,11 @@ mailing_list_address: "qfin@list.uva.nl"
 # Public list page on list.uva.nl. Anyone can subscribe there with just
 # an email address, no UvA account needed.
 mailing_list_subscribe_url: "https://list.uva.nl/postorius/lists/qfin.list.uva.nl/"
+
+# Live announcements on the homepage. Paste the Web app URL of the Apps Script
+# in the qfinformatics@gmail.com account here (see tools/announcements-feed.gs).
+# Leave empty to use _data/announcements.yml instead.
+announcements_feed_url: ""
 
 # Public QFIN events calendar (the qfinformatics@gmail.com Google account).
 # The calendar must be set to public in Google Calendar > Settings and sharing.

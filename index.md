@@ -22,6 +22,7 @@ title: "QFIN - Queer and Feminist Informatics Network"
 
   <div class="qfin-section" id="announcements">
     <h2>Announcements</h2>
+    <div data-qfin-announcements data-feed="{{ site.announcements_feed_url }}">
     {% if site.data.announcements and site.data.announcements.size > 0 %}
       {% assign announcements = site.data.announcements | sort: "date" | reverse %}
       <div class="qfin-announcements">
@@ -38,6 +39,7 @@ title: "QFIN - Queer and Feminist Informatics Network"
     {% else %}
       <p class="qfin-subtle">Nothing sent yet. Join the mailing list and the first announcement comes straight to your inbox.</p>
     {% endif %}
+    </div>
     <div class="qfin-actions">
       <a class="qfin-btn" href="{{ site.mailing_list_subscribe_url }}" target="_blank" rel="noopener">Join the mailing list</a>
     </div>
@@ -81,3 +83,7 @@ title: "QFIN - Queer and Feminist Informatics Network"
 
   {% include qfin-footer.html %}
 </div>
+
+{% if site.announcements_feed_url and site.announcements_feed_url != "" %}
+<script src="{{ '/assets/js/announcements.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>
+{% endif %}
