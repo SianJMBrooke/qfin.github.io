@@ -1,0 +1,42 @@
+# Copies the latest mailing list announcements from the public archive
+# (list.uva.nl) into _data/announcements.yml, so they show on the homepage.
+# Runs every hour, and can be run by hand from the Actions tab.
+name: Update announcements
+
+on:
+  schedule:
+    - cron: "23 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+
+concurrency:
+  group: announcements
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Read the public mailing list archive
+        run: python3 tools/fetch_announcements.py
+
+      - name: Save and rebuild the site if anything changed
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if git diff --quiet -- _data/announcements.yml; then
+            echo "No new announcements."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add _data/announcements.yml
+          git commit -m "Update announcements from the mailing list archive"
+          git push
+          # Commits made by this workflow don't start a Pages build by themselves
+          gh api -X POST "repos/${{ github.repository }}/pages/builds" || true

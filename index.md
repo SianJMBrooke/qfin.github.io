@@ -25,7 +25,6 @@ title: "QFIN - Queer and Feminist Informatics Network"
 
   <div class="qfin-section" id="announcements">
     <h2>Announcements</h2>
-    <div data-qfin-announcements data-feed="{{ site.announcements_feed_url }}">
     {% if site.data.announcements and site.data.announcements.size > 0 %}
       {% assign announcements = site.data.announcements | sort: "date" | reverse %}
       <div class="qfin-announcements">
@@ -34,15 +33,14 @@ title: "QFIN - Queer and Feminist Informatics Network"
             <div class="qfin-meta">{{ a.date | date: "%-d %B %Y" }}</div>
             <h3>{{ a.title }}</h3>
             {% if a.text %}<div class="qfin-desc">{{ a.text | markdownify }}</div>{% endif %}
-            {% if a.url and a.url != "" %}<a href="{{ a.url }}" target="_blank" rel="noopener">Read more</a>{% endif %}
+            {% if a.url and a.url != "" %}<a href="{{ a.url }}" target="_blank" rel="noopener">Read the full announcement</a>{% endif %}
           </article>
         {% endfor %}
       </div>
-      <p class="qfin-subtle">These go out first on the mailing list.</p>
+      <p class="qfin-subtle">These go out first on the mailing list. {% if site.mailing_list_archive_url %}<a href="{{ site.mailing_list_archive_url }}" target="_blank" rel="noopener">See all announcements</a>{% endif %}</p>
     {% else %}
       <p class="qfin-subtle">Nothing sent yet. Join the mailing list and the first announcement comes straight to your inbox.</p>
     {% endif %}
-    </div>
     <div class="qfin-actions">
       <a class="qfin-btn" href="{{ site.mailing_list_subscribe_url }}" target="_blank" rel="noopener">Join the mailing list</a>
     </div>
@@ -86,7 +84,3 @@ title: "QFIN - Queer and Feminist Informatics Network"
 
   {% include qfin-footer.html %}
 </div>
-
-{% if site.announcements_feed_url and site.announcements_feed_url != "" %}
-<script src="{{ '/assets/js/announcements.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>
-{% endif %}

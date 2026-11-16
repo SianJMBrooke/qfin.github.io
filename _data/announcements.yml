@@ -1,13 +1,7 @@
-# Announcements sent to the mailing list (qfin@list.uva.nl).
-# The homepage shows the three most recent, newest first.
-#
-# To add one, copy this block above the [] line, fill it in and remove the #:
-#
-# - date: 2026-11-20
-#   title: "Subject line of the email"
-#   text: "A short version of the email. Markdown links like [this](https://example.com) work."
-#   url: ""   # optional, adds a "Read more" link
-#
-# Leave the [] at the bottom while the list is empty. Once there is at least
-# one announcement, delete the [] line.
-[]
+# Filled in automatically from the public mailing list archive
+# (https://list.uva.nl/hyperkitty/list/qfin@list.uva.nl/feed/)
+# by tools/fetch_announcements.py. Edits here are overwritten.
+- date: 2026-11-16
+  title: "QFIN is moving to Discord, and we have a new website!"
+  text: "Welcome to the QFIN mailing list! Whether you've been with us since the launch or have only just signed up, here's how we'll keep in touch from now on. WE'RE MOVING FROM SLACK TO DISCORD: Slack's paid plan is too expensive for a volunteer network like ours, so our community space is moving to…"
+  url: "https://list.uva.nl/hyperkitty/list/qfin@list.uva.nl/message/FMK6KPKFJNLAS7XBUE36ONTQILVJRGFG/"
