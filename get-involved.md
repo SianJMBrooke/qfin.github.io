@@ -27,7 +27,10 @@ permalink: /get-involved/
       <div class="qfin-card qfin-channel">
         <div class="qfin-channel-label">Conversation</div>
         <h3>Discord</h3>
-        <p>Our community space for chat, introductions, reading and opportunities. You can join with any handle you like. To keep it a safe space, the invite link is in the welcome email you get when you join the mailing list.</p>
+        <p>Our community space for chat, introductions, reading and opportunities. You can join with any handle you like.</p>
+        <div class="qfin-actions">
+          {% include discord-button.html %}
+        </div>
       </div>
 
       <div class="qfin-card qfin-channel">

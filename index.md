@@ -13,6 +13,9 @@ title: "QFIN - Queer and Feminist Informatics Network"
       The Queer and Feminist Informatics Network (QFIN) is an open, inclusive network for queer and feminist approaches to computing. We bring together researchers, students and allies working across informatics, AI and data, and we work to broaden who takes part in computing education and research. We run talks, workshops, reading groups and community events, mostly in Lab42 at Amsterdam Science Park. Membership is informal and everyone is welcome.
     </p>
     <p>
+      {% include discord-button.html class="qfin-discord-btn--big" %}
+    </p>
+    <p>
       <a href="{{ '/about/' | relative_url }}">Read more about QFIN</a>
       {% if site.data.press and site.data.press.size > 0 %}{% assign news = site.data.press | first %} · <a href="{{ news.url }}" target="_blank" rel="noopener">{{ news.source }}: {{ news.title }}</a>{% endif %}
     </p>
@@ -56,7 +59,7 @@ title: "QFIN - Queer and Feminist Informatics Network"
     <div class="qfin-grid qfin-grid--3">
       <a class="qfin-card qfin-cta" href="{{ site.mailing_list_subscribe_url }}" target="_blank" rel="noopener">
         <h3>Join the mailing list</h3>
-        <p>Event announcements, calls for volunteers and a short monthly round-up, via the UvA list. No UvA account needed. The welcome email has the link to our Discord.</p>
+        <p>Event announcements, calls for volunteers and a short monthly round-up, via the UvA list. No UvA account needed.</p>
       </a>
       <a class="qfin-card qfin-cta" href="{{ '/events/' | relative_url }}">
         <h3>Come to an event</h3>

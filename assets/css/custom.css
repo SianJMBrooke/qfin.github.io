@@ -929,3 +929,28 @@ a.qfin-cta h3, a.qfin-sponsor .qfin-sponsor-name { font-family: var(--w-font) !i
 .qfin-announcement-more summary::-webkit-details-marker { display: none; }
 .qfin-announcement-more[open] summary { display: none; }
 .qfin-desc:has(> .qfin-announcement-more[open]) > p:first-child { display: none; }
+
+/* "Join QFIN Discord!" buttons, with the pixel QFIN logo */
+.qfin-discord-btn {
+  display: inline-flex; align-items: center; gap: 0.55rem;
+  padding: 0.4rem 0.9rem;
+  background: var(--w-title);
+  color: #0b0a10 !important;
+  font-family: var(--w-font); font-weight: 600; letter-spacing: 0.3px;
+  border: 1px solid; border-color: #fff #000 #000 #fff;
+  box-shadow: inset -1px -1px rgba(0,0,0,0.35), inset 1px 1px rgba(255,255,255,0.5);
+  text-decoration: none; line-height: 1.2; white-space: nowrap;
+}
+.qfin-discord-btn img {
+  height: 12px; width: auto; image-rendering: pixelated;
+  background: #0b0a10; padding: 3px 4px; box-sizing: content-box;
+  border: 1px solid; border-color: #000 rgba(255,255,255,0.6) rgba(255,255,255,0.6) #000;
+}
+.qfin-discord-btn:hover { filter: brightness(1.08); color: #000 !important; }
+.qfin-discord-btn:active { border-color: #000 #fff #fff #000; box-shadow: inset 1px 1px rgba(0,0,0,0.35); }
+.qfin-discord-btn:focus-visible { outline: 1px dotted #000; outline-offset: -4px; }
+.qfin-nav .qfin-discord-btn--nav { padding: 3px 10px; color: #0b0a10 !important; border-color: #fff #000 #000 #fff; }
+.qfin-nav .qfin-discord-btn--nav:hover { color: #000 !important; border-color: #fff #000 #000 #fff; }
+.qfin-discord-btn--big { font-size: 1.1rem; padding: 0.55rem 1.2rem; }
+.qfin-discord-btn--big img { height: 16px; }
+.w98-startmenu-discord img { height: 9px; width: auto; vertical-align: middle; background: #0b0a10; padding: 2px 3px; margin-right: 4px; }

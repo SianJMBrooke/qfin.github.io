@@ -36,6 +36,9 @@ mailing_list_address: "qfin@list.uva.nl"
 # an email address, no UvA account needed.
 mailing_list_subscribe_url: "https://list.uva.nl/postorius/lists/qfin.list.uva.nl/"
 
+# QFIN Discord invite. Shows the "Join QFIN Discord!" buttons when filled in.
+discord_invite_url: "https://discord.gg/ZryWYZ6EEj"
+
 # Live announcements on the homepage. Paste the Web app URL of the Apps Script
 # in the qfinformatics@gmail.com account here (see tools/announcements-feed.gs).
 # Leave empty to use _data/announcements.yml instead.

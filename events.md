@@ -11,7 +11,7 @@ permalink: /events/
   <div class="qfin-section">
     <h2>Upcoming Events</h2>
     <p class="qfin-subtle">
-      All QFIN events are in our public calendar. Subscribe and new events will appear in your own calendar automatically. Last-minute changes go out on the mailing list and Discord.
+      All QFIN events are in our public calendar. Subscribe and new events will appear in your own calendar automatically. Last-minute changes go out on the mailing list and {% if site.discord_invite_url and site.discord_invite_url != "" %}<a href="{{ site.discord_invite_url }}" target="_blank" rel="noopener">Discord</a>{% else %}Discord{% endif %}.
     </p>
     {% include calendar-embed.html height=560 %}
     {% include calendar-subscribe.html %}
