@@ -10,8 +10,10 @@
 - name: "Dr Siân Brooke"
   pronouns: "she/her"
   role: "Co-founder"
-  responsibilities: []
-  contact_about: ""
+  responsibilities:
+    - "Tech"
+    - "Accounting"
+  contact_about: "The website, mailing list and Discord, and budgets or accounts."
   email: "s.j.m.brooke@uva.nl"
   position: "Assistant Professor (MacGillavry Fellowship), Digital Interactions Lab (DILab)"
   profile: "https://www.uva.nl/en/profile/b/r/s.j.m.brooke/s.j.m.brooke.html"
@@ -30,8 +32,10 @@
 - name: "Maria Mlocka"
   pronouns: "she/her"
   role: "Founding member"
-  responsibilities: []
-  contact_about: ""
+  responsibilities:
+    - "Supporting Siân with tech and accounting"
+    - "Sharing out tasks to our volunteers"
+  contact_about: "Volunteering and picking up tasks."
   email: "m.l.mlocka@uva.nl"
   position: "Doctoral Student, Informatics Institute (IvI)"
   profile: "https://www.uva.nl/en/profile/m/l/m.l.mlocka/m.l.mlocka.html"
