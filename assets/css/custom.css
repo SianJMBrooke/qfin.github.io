@@ -920,3 +920,8 @@ a.qfin-cta h3, a.qfin-sponsor .qfin-sponsor-name { font-family: var(--w-font) !i
    so the frame is inverted and its colours rotated back) */
 .qfin-calendar { background: #0b0a10; }
 .qfin-calendar iframe { filter: invert(0.92) hue-rotate(180deg) saturate(1.1); }
+
+/* Announcements from the mailing list (homepage) */
+.qfin-announcements { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); margin-bottom: 0.75rem; }
+.qfin-announcement h3 { margin: 0.2rem 0 0.4rem; }
+.qfin-announcement .qfin-desc p { margin: 0 0 0.5rem; }

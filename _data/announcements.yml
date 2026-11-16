@@ -1,0 +1,13 @@
+# Announcements sent to the mailing list (qfin@list.uva.nl).
+# The homepage shows the three most recent, newest first.
+#
+# To add one, copy this block above the [] line, fill it in and remove the #:
+#
+# - date: 2026-11-20
+#   title: "Subject line of the email"
+#   text: "A short version of the email. Markdown links like [this](https://example.com) work."
+#   url: ""   # optional, adds a "Read more" link
+#
+# Leave the [] at the bottom while the list is empty. Once there is at least
+# one announcement, delete the [] line.
+[]

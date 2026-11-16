@@ -20,6 +20,29 @@ title: "QFIN - Queer and Feminist Informatics Network"
 
   {% include popup-gallery.html %}
 
+  <div class="qfin-section" id="announcements">
+    <h2>Announcements</h2>
+    {% if site.data.announcements and site.data.announcements.size > 0 %}
+      {% assign announcements = site.data.announcements | sort: "date" | reverse %}
+      <div class="qfin-announcements">
+        {% for a in announcements limit: 3 %}
+          <article class="qfin-card qfin-announcement">
+            <div class="qfin-meta">{{ a.date | date: "%-d %B %Y" }}</div>
+            <h3>{{ a.title }}</h3>
+            {% if a.text %}<div class="qfin-desc">{{ a.text | markdownify }}</div>{% endif %}
+            {% if a.url and a.url != "" %}<a href="{{ a.url }}" target="_blank" rel="noopener">Read more</a>{% endif %}
+          </article>
+        {% endfor %}
+      </div>
+      <p class="qfin-subtle">These go out first on the mailing list.</p>
+    {% else %}
+      <p class="qfin-subtle">Nothing sent yet. Join the mailing list and the first announcement comes straight to your inbox.</p>
+    {% endif %}
+    <div class="qfin-actions">
+      <a class="qfin-btn" href="{{ site.mailing_list_subscribe_url }}" target="_blank" rel="noopener">Join the mailing list</a>
+    </div>
+  </div>
+
   <div class="qfin-section">
     <h2>Upcoming Events</h2>
     {% include calendar-embed.html height=420 %}
@@ -31,7 +54,7 @@ title: "QFIN - Queer and Feminist Informatics Network"
     <div class="qfin-grid qfin-grid--3">
       <a class="qfin-card qfin-cta" href="{{ site.mailing_list_subscribe_url }}" target="_blank" rel="noopener">
         <h3>Join the mailing list</h3>
-        <p>Event announcements, calls for volunteers and a short monthly round-up. The welcome email has the link to our Discord.</p>
+        <p>Event announcements, calls for volunteers and a short monthly round-up, via the UvA list. No UvA account needed. The welcome email has the link to our Discord.</p>
       </a>
       <a class="qfin-card qfin-cta" href="{{ '/events/' | relative_url }}">
         <h3>Come to an event</h3>

@@ -31,9 +31,9 @@ contact_email: "qfin-science@uva.nl"
 
 # Mailing list (list.uva.nl)
 mailing_list_address: "qfin@list.uva.nl"
-# TODO: replace with the public subscribe page from list.uva.nl.
-# Until then this points at the existing Google Form.
-mailing_list_subscribe_url: "https://docs.google.com/forms/d/e/1FAIpQLScgq7ggljOVLVyLeNbCSD1TisPGPgw7IfzfCVVLvTuo0sI-VQ/viewform?usp=header"
+# Public list page on list.uva.nl. Anyone can subscribe there with just
+# an email address, no UvA account needed.
+mailing_list_subscribe_url: "https://list.uva.nl/postorius/lists/qfin.list.uva.nl/"
 
 # Public QFIN events calendar (the qfinformatics@gmail.com Google account).
 # The calendar must be set to public in Google Calendar > Settings and sharing.
