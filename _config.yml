@@ -46,6 +46,9 @@ google_calendar_add_url: "https://calendar.google.com/calendar/u/0?cid=cWZpbmZvc
 involvement_survey_url: "https://uva.fra1.qualtrics.com/jfe/form/SV_e9HsduKt2iEbJkO"
 
 linkedin_url: "https://www.linkedin.com/company/qfin-uva/"
+# Paste the full Instagram profile link here (e.g. https://www.instagram.com/handle/).
+# Links appear on the site automatically once this is filled in.
+instagram_url: ""
 
 # Work with us page. Leave empty to use a pre-filled email to contact_email,
 # or paste a form link (e.g. a Google Form) to use that instead.

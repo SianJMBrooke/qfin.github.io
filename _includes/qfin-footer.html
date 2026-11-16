@@ -5,7 +5,8 @@
     <a href="{{ site.mailing_list_subscribe_url }}" target="_blank" rel="noopener">Mailing list</a> ·
     <a href="{{ '/events/' | relative_url }}">Calendar</a> ·
     <a href="{{ '/work-with-us/' | relative_url }}">Work with us</a> ·
-    <a href="{{ site.linkedin_url }}" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="{{ site.linkedin_url }}" target="_blank" rel="noopener">LinkedIn</a>{% if site.instagram_url and site.instagram_url != "" %} ·
+    <a href="{{ site.instagram_url }}" target="_blank" rel="noopener">Instagram</a>{% endif %}
   </span>
 </p>
 
@@ -20,6 +21,8 @@
     <a href="{{ site.mailing_list_subscribe_url }}" target="_blank" rel="noopener">Join the mailing list</a>
     <a href="{{ '/events/' | relative_url }}">Subscribe to the calendar</a>
     <a href="mailto:{{ site.contact_email }}">Email us</a>
+    {% if site.instagram_url and site.instagram_url != "" %}<a href="{{ site.instagram_url }}" target="_blank" rel="noopener">Instagram</a>{% endif %}
+    <a href="{{ site.linkedin_url }}" target="_blank" rel="noopener">LinkedIn</a>
   </nav>
 </div>
 <div class="w98-taskbar" data-w98-taskbar data-page-title="{{ page.title | split: ' - ' | first }}">

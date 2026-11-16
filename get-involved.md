@@ -63,7 +63,7 @@ permalink: /get-involved/
   <div class="qfin-section">
     <h2>Follow Us</h2>
     <p class="qfin-subtle">
-      We share news and event recaps on <a href="{{ site.linkedin_url }}" target="_blank" rel="noopener">LinkedIn</a>.
+      We share news and event recaps on {% if site.instagram_url and site.instagram_url != "" %}<a href="{{ site.instagram_url }}" target="_blank" rel="noopener">Instagram</a> and {% endif %}<a href="{{ site.linkedin_url }}" target="_blank" rel="noopener">LinkedIn</a>.
     </p>
   </div>
 
