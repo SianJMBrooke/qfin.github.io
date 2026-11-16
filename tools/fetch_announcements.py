@@ -15,7 +15,7 @@ from pathlib import Path
 
 FEED_URL = "https://list.uva.nl/hyperkitty/list/qfin@list.uva.nl/feed/"
 OUT = Path(__file__).resolve().parent.parent / "_data" / "announcements.yml"
-KEEP = 10          # how many announcements to store (the homepage shows 3)
+KEEP = 10          # how many announcements to store (the homepage shows the latest)
 EXCERPT = 300      # characters shown on the homepage
 
 

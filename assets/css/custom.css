@@ -954,3 +954,10 @@ a.qfin-cta h3, a.qfin-sponsor .qfin-sponsor-name { font-family: var(--w-font) !i
 .qfin-discord-btn--big { font-size: 1.1rem; padding: 0.55rem 1.2rem; }
 .qfin-discord-btn--big img { height: 16px; }
 .w98-startmenu-discord img { height: 9px; width: auto; vertical-align: middle; background: #0b0a10; padding: 2px 3px; margin-right: 4px; }
+/* Smaller text in the homepage announcement cards */
+.qfin-announcement { padding: 0.85rem 1rem !important; }
+.qfin-announcement .qfin-meta { font-size: 0.75rem; }
+.qfin-announcement h3 { font-size: 0.9rem !important; margin: 0.15rem 0 0.35rem; line-height: 1.3; }
+.qfin-announcement .qfin-desc, .qfin-announcement .qfin-desc p { font-size: 0.82rem; line-height: 1.5; }
+.qfin-announcement > a { font-size: 0.82rem; }
+#announcements > .qfin-subtle { font-size: 0.85rem; }
