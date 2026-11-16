@@ -915,3 +915,8 @@ a.qfin-cta h3, a.qfin-sponsor .qfin-sponsor-name { font-family: var(--w-font) !i
   .main-content { padding: 1rem 0.75rem 2rem !important; }
   .qfin-profile-list { grid-template-columns: 1fr; }
 }
+
+/* Dark mode for the embedded Google Calendar (Google has no dark embed,
+   so the frame is inverted and its colours rotated back) */
+.qfin-calendar { background: #0b0a10; }
+.qfin-calendar iframe { filter: invert(0.92) hue-rotate(180deg) saturate(1.1); }
