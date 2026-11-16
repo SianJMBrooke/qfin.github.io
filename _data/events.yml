@@ -1,4 +1,9 @@
 
+- title: "QFIN Inaugural Gathering: Trans Technologies"
+  date: 2025-11-25
+  location: "LAB42, Amsterdam Science Park"
+  description: "Our first gathering, a discussion of Trans Technologies that started QFIN off."
+
 - title: "QFIN Launch Event"
   date: 2026-04-24
   time: "15:00–18:30"
@@ -26,6 +31,17 @@
       title: "Community Poster Session"
       description: "Want to submit a community poster? Optional, deadline April 17."
 
+- title: "QFIN at the ELSA AIHHH Workshop"
+  date: 2026-10-01
+  time: "16:00–18:00"
+  location: "De Doelen, Jurriaanse Zaal, Rotterdam"
+  description: "QFIN joined the ELSA AIHHH workshop in Rotterdam."
+
+- title: "QFIN at Alice & Eve 2026"
+  date: 2026-10-20
+  location: "Neude 11 (Utrecht Public Library), Utrecht"
+  description: "QFIN took part in Alice & Eve 2026 in Utrecht."
+
 - title: "QFIN Autumn Open Event"
   date: 2026-11-04
   time: "15:00–18:30"
@@ -49,3 +65,17 @@
       room: "L1.12 & L1.17"
       title: "Informal Borrel"
       description: "Stay for snacks and informal conversation."
+- title: "QFIN at the AI & Data Science Day"
+  date: 2026-11-13
+  time: "10:00–17:00"
+  location: "University Library, Vendelstraat 2-8, Amsterdam"
+  description: "QFIN ran a workshop and showed a poster at the UvA/HvA Data Science Centre's annual AI & Data Science Day."
+  schedule:
+    - time: "10:00–12:30"
+      room: "PC Hooftzaal (UB A0.04)"
+      title: "Workshop: Queering Data Biographies"
+      description: "Participants rebuilt the last 24 hours of their own lives as a data trail and asked what a system would assemble from those traces, and how much of the guessing runs along lines of gender, age and class. The second half looked at refusal, glitch, noise and deliberate inconsistency as tactics, what they cost and where they stop working. Entirely non-technical."
+    - time: "15:30–17:00"
+      room: "Salon, lower ground floor"
+      title: "Poster: QFIN, Advancing Feminist and Queer Scholarship in Informatics and Computer Science"
+      description: ""
