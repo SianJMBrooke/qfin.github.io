@@ -18,6 +18,8 @@ title: "QFIN - Queer and Feminist Informatics Network"
     </p>
   </div>
 
+  {% include popup-gallery.html %}
+
   <div class="qfin-section">
     <h2>Upcoming Events</h2>
     {% include calendar-embed.html height=420 %}

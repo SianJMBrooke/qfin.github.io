@@ -1,9 +1,32 @@
 <p class="footer-note">
-  QFIN is based in Amsterdam, with most events in Lab42 at Amsterdam Science Park.
-  <br><br>
-  <a href="mailto:{{ site.contact_email }}" style="color:var(--grey);">{{ site.contact_email }}</a> ·
-  <a href="{{ site.mailing_list_subscribe_url }}" target="_blank" rel="noopener" style="color:var(--grey);">Mailing list</a> ·
-  <a href="{{ '/events/' | relative_url }}" style="color:var(--grey);">Calendar</a> ·
-  <a href="{{ '/work-with-us/' | relative_url }}" style="color:var(--grey);">Work with us</a> ·
-  <a href="{{ site.linkedin_url }}" target="_blank" rel="noopener" style="color:var(--grey);">LinkedIn</a>
+  <span class="w98-field">QFIN is based in Amsterdam, with most events in Lab42 at Amsterdam Science Park.</span>
+  <span class="w98-field">
+    <a href="mailto:{{ site.contact_email }}">{{ site.contact_email }}</a> ·
+    <a href="{{ site.mailing_list_subscribe_url }}" target="_blank" rel="noopener">Mailing list</a> ·
+    <a href="{{ '/events/' | relative_url }}">Calendar</a> ·
+    <a href="{{ '/work-with-us/' | relative_url }}">Work with us</a> ·
+    <a href="{{ site.linkedin_url }}" target="_blank" rel="noopener">LinkedIn</a>
+  </span>
 </p>
+
+<!-- QFIN 98 taskbar and Start menu -->
+<div class="w98-startmenu" data-w98-startmenu id="w98-startmenu">
+  <div class="w98-startmenu-stripe" aria-hidden="true"><span>QFIN <b>98</b></span></div>
+  <nav class="w98-startmenu-items" aria-label="Start menu">
+    {% for item in site.nav %}
+      <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
+    {% endfor %}
+    <hr>
+    <a href="{{ site.mailing_list_subscribe_url }}" target="_blank" rel="noopener">Join the mailing list</a>
+    <a href="{{ '/events/' | relative_url }}">Subscribe to the calendar</a>
+    <a href="mailto:{{ site.contact_email }}">Email us</a>
+  </nav>
+</div>
+<div class="w98-taskbar" data-w98-taskbar data-page-title="{{ page.title | split: ' - ' | first }}">
+  <button type="button" class="w98-start" data-w98-start aria-haspopup="true" aria-expanded="false" aria-controls="w98-startmenu">
+    <img src="{{ '/assets/images/qfin-logo-compact.png' | relative_url }}" alt="">Start
+  </button>
+  <span class="w98-tasks" data-w98-tasks></span>
+  <span class="w98-clock" data-w98-clock></span>
+</div>
+<script src="{{ '/assets/js/w98.js' | relative_url }}" defer></script>
