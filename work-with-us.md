@@ -6,7 +6,7 @@ permalink: /work-with-us/
 
 {% include qfin-header.html %}
 
-{% capture workshop_mailto %}mailto:{{ site.contact_email }}?subject=QFIN%20workshop%20request&body=Hi%20QFIN%2C%0D%0A%0D%0AWe%27d%20like%20to%20request%20a%20QFIN%20workshop.%0D%0A%0D%0AWho%20we%20are%3A%0D%0AWhat%20the%20workshop%20is%20for%20%28course%2C%20team%2C%20event%2C%20conference%29%3A%0D%0APossible%20dates%3A%0D%0AExpected%20group%20size%3A%0D%0ALocation%20%28or%20online%29%3A%0D%0ABudget%2C%20if%20any%3A%0D%0A{% endcapture %}
+{% capture workshop_mailto %}mailto:{{ site.contact_email }}?subject=QFIN%20workshop%20request&body=Hi%20QFIN%2C%0D%0A%0D%0AWe%27d%20like%20to%20request%20a%20QFIN%20workshop.%0D%0A%0D%0AWho%20we%20are%3A%0D%0ATopics%20or%20themes%20we%27re%20interested%20in%3A%0D%0AWhat%20the%20workshop%20is%20for%20%28course%2C%20team%2C%20event%2C%20conference%29%3A%0D%0APossible%20dates%3A%0D%0AExpected%20group%20size%3A%0D%0ALocation%20%28or%20online%29%3A%0D%0ABudget%2C%20if%20any%3A%0D%0A{% endcapture %}
 {% capture sponsor_mailto %}mailto:{{ site.contact_email }}?subject=Sponsoring%20QFIN&body=Hi%20QFIN%2C%0D%0A%0D%0AWe%27re%20interested%20in%20sponsoring%20QFIN.%0D%0A%0D%0AOrganisation%3A%0D%0AWhat%20we%27d%20like%20to%20support%20%28an%20event%2C%20the%20year%27s%20programme%2C%20in-kind%20support%29%3A%0D%0AContact%20person%3A%0D%0A{% endcapture %}
 {% if site.workshop_request_url and site.workshop_request_url != "" %}{% assign workshop_link = site.workshop_request_url %}{% else %}{% assign workshop_link = workshop_mailto %}{% endif %}
 {% if site.sponsor_url and site.sponsor_url != "" %}{% assign sponsor_link = site.sponsor_url %}{% else %}{% assign sponsor_link = sponsor_mailto %}{% endif %}
@@ -33,9 +33,13 @@ permalink: /work-with-us/
   <div class="qfin-section" id="request-a-workshop">
     <h2>Request a Workshop</h2>
     <p class="qfin-subtle">
-      Our workshops are hands-on and often use making and crafts as a way into critical theory and design. They work well for people with no technical background as well as computing students and researchers. Recent sessions include:
+      Our workshops are hands-on and often use making and crafts as a way into critical theory and design. They work well for people with no technical background as well as computing students and researchers. Here are some we've run before, to give you an idea.
     </p>
     <div class="workshop-grid">
+      <div class="workshop-card">
+        <h4>Queering Data Biographies</h4>
+        <p>Mapping the last 24 hours as a data trail, working out who a system thinks you are, then scrambling the picture with glitch, noise and refusal. Run at the UvA AI &amp; Data Science Day.</p>
+      </div>
       <div class="workshop-card">
         <h4>Don't Worry Mum, ChatGPT Says I'll Be Fine</h4>
         <p>How LLMs, web search and "no tools" shape what AI knows about queer rights.</p>
@@ -50,7 +54,7 @@ permalink: /work-with-us/
       </div>
     </div>
     <p class="qfin-subtle" style="margin-top:1.25rem;">
-      Tell us a bit about your group and what you have in mind, and we'll work out the format, length and costs with you.
+      These are examples, not a menu. You don't need to pick one. Tell us about your group and what you'd like to explore, and we'll design a workshop with you and agree the format, length and costs.
     </p>
     <div class="qfin-actions">
       <a class="qfin-btn" href="{{ workshop_link }}"{% if site.workshop_request_url and site.workshop_request_url != "" %} target="_blank" rel="noopener"{% endif %}>Request a workshop</a>
