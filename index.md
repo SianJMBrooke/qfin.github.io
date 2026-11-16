@@ -12,7 +12,10 @@ title: "QFIN - Queer and Feminist Informatics Network"
     <p class="qfin-subtle">
       The Queer and Feminist Informatics Network (QFIN) brings together researchers, students and allies working on queer and feminist approaches to informatics, AI and computing, and works to broaden who takes part in computing education and research. We run talks, workshops, reading groups and community events, mostly in Lab42 at Amsterdam Science Park. Membership is informal and everyone is welcome.
     </p>
-    <p><a href="{{ '/about/' | relative_url }}">Read more about QFIN</a></p>
+    <p>
+      <a href="{{ '/about/' | relative_url }}">Read more about QFIN</a>
+      {% if site.data.press and site.data.press.size > 0 %}{% assign news = site.data.press | first %} · <a href="{{ news.url }}" target="_blank" rel="noopener">{{ news.source }}: {{ news.title }}</a>{% endif %}
+    </p>
   </div>
 
   <div class="qfin-section">

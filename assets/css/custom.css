@@ -586,3 +586,14 @@ a.qfin-cta:nth-child(3) h3 { color: var(--pink) !important; }
 }
 .qfin-partner-strip h3 { margin: 0 0 0.25rem; color: var(--pink) !important; font-size: 1rem; }
 .qfin-partner-strip p { margin: 0; color: var(--grey-light); }
+
+/* Sponsors */
+.qfin-sponsors { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
+a.qfin-sponsor { display: flex; flex-direction: column; gap: 0.25rem; color: var(--grey-light); }
+a.qfin-sponsor img { height: 40px; width: auto; align-self: flex-start; margin-bottom: 0.4rem; }
+.qfin-sponsor-name {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  text-transform: uppercase; letter-spacing: 0.5px; color: #fff;
+}
+a.qfin-sponsor:hover .qfin-sponsor-name { color: var(--pink); }
+.qfin-subhead { margin: 1.5rem 0 0.75rem; font-size: 0.85rem; color: var(--purple) !important; }

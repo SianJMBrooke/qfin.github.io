@@ -26,6 +26,27 @@ Most events take place in Lab42 at Amsterdam Science Park, with hybrid participa
 </p>
   </div>
 
+  <div class="qfin-section">
+    <h2>Sponsors</h2>
+    <p class="qfin-subtle">QFIN is supported by:</p>
+    {% include sponsors-list.html %}
+    <p class="qfin-small" style="margin-top:1rem;">Interested in supporting QFIN? See <a href="{{ '/work-with-us/#sponsor-qfin' | relative_url }}">sponsor us</a>.</p>
+  </div>
+
+  {% if site.data.press and site.data.press.size > 0 %}
+  <div class="qfin-section">
+    <h2>In the News</h2>
+    <ul class="pub-list">
+      {% for item in site.data.press %}
+        <li>
+          <a href="{{ item.url }}" target="_blank" rel="noopener" class="pub-title" style="text-decoration:none;">{{ item.title }}</a>
+          <div class="qfin-small">{{ item.source }}, {{ item.date | date: "%-d %B %Y" }}</div>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+
   <div class="logo-row">
     <img src="{{ '/assets/images/dilab-logo-white.png' | relative_url }}" alt="DILab">
     <img src="{{ '/assets/images/uva-ivi-white.png' | relative_url }}" alt="UvA Informatics Institute" class="logo-ivi">

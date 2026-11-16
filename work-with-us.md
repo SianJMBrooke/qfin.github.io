@@ -70,6 +70,8 @@ permalink: /work-with-us/
     <p class="qfin-subtle">
       We also welcome in-kind support, such as rooms, catering or printing. You can support a single event or our programme for the year.
     </p>
+    <h4 class="qfin-subhead">Our sponsors</h4>
+    {% include sponsors-list.html %}
     <div class="qfin-actions">
       <a class="qfin-btn" href="{{ sponsor_link }}"{% if site.sponsor_url and site.sponsor_url != "" %} target="_blank" rel="noopener"{% endif %}>Become a sponsor</a>
     </div>
