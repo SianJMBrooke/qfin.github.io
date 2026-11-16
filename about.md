@@ -22,7 +22,7 @@ The network hosts book talks, research seminars, methods workshops, and reading 
 </p>
 
 <p class="qfin-subtle">
-Most events take place in Lab42 at Amsterdam Science Park, with hybrid participation when possible. Membership is informal and open: anyone interested in feminist or queer approaches to computing — or simply curious to learn more — is welcome.
+QFIN is based in Amsterdam, the Netherlands. Most events take place in Lab42 at Amsterdam Science Park, with hybrid participation when possible. Membership is informal and open, and anyone interested in feminist or queer approaches to computing, or simply curious to learn more, is welcome.
 </p>
   </div>
 
