@@ -1,9 +1,8 @@
-
 title: "Queer and Feminist Informatics Network"
 description: "The Queer and Feminist Informatics Network (QFin) is an open, inclusive network embedded in the Digital Interactions Lab (DILab) at the Informatics Institute (IvI), University of Amsterdam."
 qfin_logo: "/assets/images/qfin-logo-banner.png"
 baseurl: ""
-url: "https://yourusername.github.io"
+url: "https://www.qfinformatics.com"
 
 title_color: "#ffffff"
 title_gradient_blue: "#00e5ff"
@@ -18,3 +17,45 @@ dilab_logo: "/assets/images/dilab-logo-white.png"
 markdown: kramdown
 kramdown:
   input: GFM
+
+exclude:
+  - README.md
+
+# ------------------------------------------------------------
+# QFIN settings
+# Change these here and every page updates.
+# ------------------------------------------------------------
+
+# Shared mailbox, used as the main contact address
+contact_email: "qfin-science@uva.nl"
+
+# Mailing list (list.uva.nl)
+mailing_list_address: "qfin@list.uva.nl"
+# TODO: replace with the public subscribe page from list.uva.nl.
+# Until then this points at the existing Google Form.
+mailing_list_subscribe_url: "https://docs.google.com/forms/d/e/1FAIpQLScgq7ggljOVLVyLeNbCSD1TisPGPgw7IfzfCVVLvTuo0sI-VQ/viewform?usp=header"
+
+# TODO: paste the Calendar ID of the public QFIN Events Google Calendar
+# (Google Calendar > Settings and sharing > Integrate calendar > Calendar ID).
+# While this is empty the Events page shows a placeholder.
+google_calendar_id: ""
+
+# Survey for people who want to take on a role
+involvement_survey_url: "https://uva.fra1.qualtrics.com/jfe/form/SV_e9HsduKt2iEbJkO"
+
+linkedin_url: "https://www.linkedin.com/company/qfin-uva/"
+
+# Top navigation
+nav:
+  - title: "Home"
+    url: "/"
+  - title: "About"
+    url: "/about/"
+  - title: "Events"
+    url: "/events/"
+  - title: "Committee"
+    url: "/committee/"
+  - title: "Publications"
+    url: "/publications/"
+  - title: "Get involved"
+    url: "/get-involved/"

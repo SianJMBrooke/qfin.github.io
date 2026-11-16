@@ -365,3 +365,142 @@ h3, h5 { color: var(--grey-light) !important; }
     grid-template-columns: 1fr;
   }
 }
+
+/* ================================
+   PAGE-LEVEL OVERRIDES
+   (moved from the old single-page index)
+   ================================ */
+.qfin-section { margin: 3.5rem 0 2.25rem !important; }
+.pub-list { margin: 0; padding-left: 1.25rem; }
+.pub-list li { padding: 0.6rem 0 0.9rem 0; }
+.pub-title, .pub-authors, .pub-venue { font-weight: 400 !important; }
+.pub-links a { color: inherit !important; text-decoration: underline; }
+.pub-links a[data-accent="true"] { color: var(--cyan) !important; }
+
+/* ================================
+   NAVIGATION
+   ================================ */
+.qfin-nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.5rem;
+  margin: 0.5rem auto 1.5rem;
+  padding: 0.75rem 1rem;
+  max-width: 960px;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.qfin-nav a { color: var(--grey-light); padding: 0.2rem 0; border-bottom: 2px solid transparent; }
+.qfin-nav a:hover { color: var(--cyan); }
+.qfin-nav a.is-active { color: var(--cyan); border-bottom-color: var(--cyan); }
+
+/* Compact header on inner pages */
+.qfin-compact-header { text-align: center; padding: 1.75rem 0 0.25rem; }
+.qfin-compact-logo img { display: inline-block; height: 72px; width: auto; }
+
+/* ================================
+   GRIDS, CALLS TO ACTION, BUTTON ROWS
+   ================================ */
+.qfin-grid--3 { grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); }
+.qfin-actions { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
+.qfin-actions .qfin-btn { margin-right: 0; }
+.qfin-btn--disabled { opacity: 0.4; cursor: not-allowed; }
+
+a.qfin-cta { display: block; color: var(--grey-light); }
+a.qfin-cta h3 { margin-top: 0; color: var(--cyan) !important; font-size: 1rem; }
+a.qfin-cta p { margin-bottom: 0; line-height: 1.6; font-size: 0.95rem; }
+a.qfin-cta:hover { color: #fff; }
+
+/* ================================
+   CALENDAR
+   ================================ */
+.qfin-calendar {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--cyan);
+  border-radius: 6px;
+  overflow: hidden;
+}
+.qfin-calendar--placeholder {
+  background: var(--card);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: var(--grey-light);
+  padding: 2rem;
+  border-style: dashed;
+}
+.qfin-calendar--placeholder p { margin: 0.25rem 0; }
+.qfin-calendar--placeholder code { color: var(--cyan); background: transparent; }
+
+/* ================================
+   EVENTS
+   ================================ */
+.qfin-card.event-hero + .qfin-card.event-hero { margin-top: 1.25rem; }
+.qfin-card.event-past { border-left-color: var(--grey); }
+.qfin-schedule { margin-top: 1rem; }
+.qfin-schedule summary {
+  cursor: pointer;
+  color: var(--cyan);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+/* ================================
+   COMMITTEE PROFILES
+   ================================ */
+.qfin-profile-list { display: grid; gap: 1.25rem; }
+.qfin-profile { display: grid; grid-template-columns: 140px 1fr; gap: 1.5rem; align-items: start; }
+.qfin-profile-photo img {
+  width: 140px; height: 140px; border-radius: 50%; object-fit: cover;
+  border: 2px solid var(--border); background: #111;
+  transition: border-color 0.3s;
+}
+.qfin-profile:hover .qfin-profile-photo img { border-color: var(--cyan); }
+.qfin-profile-body h3 { margin: 0 0 0.2rem 0; color: #fff !important; }
+.qfin-profile-body h4 {
+  margin: 1rem 0 0.3rem;
+  font-size: 0.8rem;
+  color: var(--cyan) !important;
+}
+.qfin-role {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  color: var(--cyan);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 0.85rem;
+  margin-bottom: 0.4rem;
+}
+.qfin-resp { margin: 0; padding-left: 1.1rem; color: var(--grey-light); font-size: 0.95rem; }
+.qfin-tbc { color: var(--grey) !important; font-style: italic; text-transform: none; letter-spacing: 0; }
+.qfin-profile-body p { margin: 0; }
+.qfin-profile-links { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1rem; font-size: 0.9rem; }
+
+/* ================================
+   CHANNELS (Get involved)
+   ================================ */
+.qfin-channel h3 { margin-top: 0.25rem; color: #fff !important; }
+.qfin-channel p { color: var(--grey-light); line-height: 1.6; }
+.qfin-channel-label {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--cyan);
+}
+
+@media (max-width: 768px){
+  .qfin-profile { grid-template-columns: 1fr; }
+  .qfin-profile-photo img { width: 110px; height: 110px; }
+  .qfin-nav { gap: 0.25rem 1rem; font-size: 0.8rem; }
+}
