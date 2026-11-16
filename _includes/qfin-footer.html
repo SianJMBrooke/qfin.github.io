@@ -19,7 +19,7 @@
       <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
     {% endfor %}
     <hr>
-    {% if site.discord_invite_url and site.discord_invite_url != "" %}<a href="{{ site.discord_invite_url }}" target="_blank" rel="noopener" class="w98-startmenu-discord"><img src="{{ '/assets/images/qfin-pixel.svg' | relative_url }}" alt="" width="28" height="7"> Join QFIN Discord!</a>{% endif %}
+    {% if site.discord_invite_url and site.discord_invite_url != "" %}<a href="{{ site.discord_invite_url }}" target="_blank" rel="noopener" class="w98-startmenu-discord"><img src="https://cdn.jsdelivr.net/npm/simple-icons@13/icons/discord.svg" alt="" width="14" height="14"> Join QFIN Discord!</a>{% endif %}
     <a href="{{ site.mailing_list_subscribe_url }}" target="_blank" rel="noopener">Join the mailing list</a>
     <a href="{{ '/events/' | relative_url }}">Subscribe to the calendar</a>
     <a href="mailto:{{ site.contact_email }}">Email us</a>

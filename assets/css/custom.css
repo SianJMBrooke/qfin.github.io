@@ -961,3 +961,24 @@ a.qfin-cta h3, a.qfin-sponsor .qfin-sponsor-name { font-family: var(--w-font) !i
 .qfin-announcement .qfin-desc, .qfin-announcement .qfin-desc p { font-size: 0.82rem; line-height: 1.5; }
 .qfin-announcement > a { font-size: 0.82rem; }
 #announcements > .qfin-subtle { font-size: 0.85rem; }
+
+/* Discord logo on the "Join QFIN Discord!" buttons (Simple Icons, loaded from jsDelivr) */
+.qfin-discord-btn img {
+  height: 16px; width: 16px; padding: 0; background: none; border: 0;
+  image-rendering: auto; box-sizing: border-box;
+}
+.qfin-discord-btn--big img { height: 20px; width: 20px; }
+.w98-startmenu-discord img { height: 14px; width: 14px; padding: 0; background: none; filter: invert(1); margin-right: 6px; }
+
+/* Photo window title bar buttons, drawn the same way as the section windows */
+.w98-btn {
+  width: 16px; height: 14px; padding: 0; margin-left: 2px;
+  border: 0; box-shadow: none; border-radius: 0;
+  font-size: 0; color: transparent;
+  background-color: transparent; background-repeat: no-repeat; background-size: 16px 14px;
+}
+.w98-btn[data-w98-min] { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='14' viewBox='0 0 16 14'%3E%3Crect width='16' height='14' fill='%23000'/%3E%3Crect width='15' height='13' fill='%236d6a80'/%3E%3Crect x='1' y='1' width='14' height='12' fill='%230b0a10'/%3E%3Crect x='1' y='1' width='13' height='11' fill='%233a3846'/%3E%3Crect x='2' y='2' width='12' height='10' fill='%231b1a22'/%3E%3Crect x='4' y='9' width='6' height='2' fill='%23ece9f5'/%3E%3C/svg%3E"); }
+.w98-btn[data-w98-max] { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='14' viewBox='0 0 16 14'%3E%3Crect width='16' height='14' fill='%23000'/%3E%3Crect width='15' height='13' fill='%236d6a80'/%3E%3Crect x='1' y='1' width='14' height='12' fill='%230b0a10'/%3E%3Crect x='1' y='1' width='13' height='11' fill='%233a3846'/%3E%3Crect x='2' y='2' width='12' height='10' fill='%231b1a22'/%3E%3Crect x='4' y='3' width='8' height='8' fill='none' stroke='%23ece9f5' stroke-width='1'/%3E%3Crect x='4' y='3' width='8' height='2' fill='%23ece9f5'/%3E%3C/svg%3E"); }
+.w98-btn[data-w98-close] { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='14' viewBox='0 0 16 14'%3E%3Crect width='16' height='14' fill='%23000'/%3E%3Crect width='15' height='13' fill='%236d6a80'/%3E%3Crect x='1' y='1' width='14' height='12' fill='%230b0a10'/%3E%3Crect x='1' y='1' width='13' height='11' fill='%233a3846'/%3E%3Crect x='2' y='2' width='12' height='10' fill='%231b1a22'/%3E%3Cpath d='M4.5 3.5l6 6M10.5 3.5l-6 6' stroke='%23ece9f5' stroke-width='1.6'/%3E%3C/svg%3E"); }
+.w98-btn:active { border: 0; box-shadow: none; transform: translate(1px, 1px); }
+.w98-btn:focus-visible { outline: 1px dotted #fff; outline-offset: 1px; }
