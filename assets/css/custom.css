@@ -577,3 +577,12 @@ a.qfin-cta:nth-child(3) h3 { color: var(--pink) !important; }
 
 /* Publications */
 .pub-year { color: var(--pink); }
+
+/* Work with us strip on the home page */
+.qfin-partner-strip {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+  gap: 1rem; margin: 2.5rem 0 1rem;
+  border-image: linear-gradient(90deg, var(--purple), var(--pink)) 1;
+}
+.qfin-partner-strip h3 { margin: 0 0 0.25rem; color: var(--pink) !important; font-size: 1rem; }
+.qfin-partner-strip p { margin: 0; color: var(--grey-light); }

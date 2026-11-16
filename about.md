@@ -11,7 +11,7 @@ permalink: /about/
   <div class="qfin-section">
     <h2>About QFIN</h2>
     <p class="qfin-subtle">
-The Queer and Feminist Informatics Network (QFIN) is an open, inclusive community that brings together researchers, students, and allies to advance feminist and queer scholarship across informatics and computer science. Embedded in the Digital Interactions Lab (DILab) at the Informatics Institute (IvI), University of Amsterdam, QFIN connects work already happening across the Netherlands and creates new opportunities for collaboration, mentorship, and visibility.</p>
+The Queer and Feminist Informatics Network (QFIN) is an open, inclusive community that brings together researchers, students, and allies to advance feminist and queer scholarship across informatics and computer science, and to broaden participation in computing education and research. Embedded in the Digital Interactions Lab (DILab) at the Informatics Institute (IvI), University of Amsterdam, QFIN connects work already happening across the Netherlands and creates new opportunities for collaboration, mentorship, and visibility.</p>
 
 <p class="qfin-subtle">
 QFIN aims to strengthen research that interrogates how digital systems shape power, identity, and everyday life, while also building a supportive space for queer and trans researchers to thrive. The network welcomes work spanning HCI, AI and data science, software engineering, sociotechnical systems, critical data studies, and adjacent fields. Core values include intersectionality, accessibility, community accountability, and consent-based, privacy-respecting research practices.

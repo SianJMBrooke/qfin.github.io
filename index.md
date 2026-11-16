@@ -10,7 +10,7 @@ title: "QFIN - Queer and Feminist Informatics Network"
   <div class="qfin-section">
     <h2>Welcome</h2>
     <p class="qfin-subtle">
-      The Queer and Feminist Informatics Network (QFIN) brings together researchers, students and allies working on queer and feminist approaches to informatics, AI and computing. We run talks, workshops, reading groups and community events, mostly in Lab42 at Amsterdam Science Park. Membership is informal and everyone is welcome.
+      The Queer and Feminist Informatics Network (QFIN) brings together researchers, students and allies working on queer and feminist approaches to informatics, AI and computing, and works to broaden who takes part in computing education and research. We run talks, workshops, reading groups and community events, mostly in Lab42 at Amsterdam Science Park. Membership is informal and everyone is welcome.
     </p>
     <p><a href="{{ '/about/' | relative_url }}">Read more about QFIN</a></p>
   </div>
@@ -36,6 +36,17 @@ title: "QFIN - Queer and Feminist Informatics Network"
         <h3>Meet the committee</h3>
         <p>Who runs QFIN, what each of us looks after, and who to contact about what.</p>
       </a>
+    </div>
+  </div>
+
+  <div class="qfin-card qfin-partner-strip">
+    <div>
+      <h3>Work with us</h3>
+      <p>Sponsor QFIN or invite us to run a workshop for your course, team or event.</p>
+    </div>
+    <div class="qfin-actions" style="margin-top:0;">
+      <a class="qfin-btn" href="{{ '/work-with-us/#request-a-workshop' | relative_url }}">Request a workshop</a>
+      <a class="qfin-btn" href="{{ '/work-with-us/#sponsor-qfin' | relative_url }}">Sponsor us</a>
     </div>
   </div>
 
