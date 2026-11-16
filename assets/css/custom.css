@@ -821,22 +821,8 @@ a.qfin-cta h3, a.qfin-sponsor .qfin-sponsor-name { font-family: var(--w-font) !i
   scroll-snap-type: x mandatory;
   scrollbar-color: var(--w-hi) var(--w-face);
 }
-.w98-floaters .w98-window { position: relative; flex: 0 0 220px; scroll-snap-align: start; }
+.w98-floaters .w98-window { position: relative; flex: 1 0 210px; max-width: 320px; scroll-snap-align: start; }
 .w98-floaters .w98-titlebar { cursor: default; }
-
-/* ...and floating in the page margins on wide screens */
-@media (min-width: 1360px) {
-  .qfin-wrap { position: relative; }
-  .w98-floaters {
-    position: absolute; top: 0; left: calc(50% - 50vw); width: 100vw; height: 100%;
-    display: block; overflow: visible; margin: 0; padding: 0;
-    pointer-events: none; z-index: 5;
-  }
-  .w98-floaters .w98-window { position: absolute; top: var(--top, 0); pointer-events: auto; }
-  .w98-floaters .w98-window.side-left { left: calc(50% - 620px); }
-  .w98-floaters .w98-window.side-right { left: calc(50% + 400px); }
-  .w98-floaters .w98-titlebar { cursor: move; }
-}
 
 /* ---- Taskbar and Start menu ---- */
 .w98-taskbar {
@@ -911,4 +897,20 @@ a.qfin-cta h3, a.qfin-sponsor .qfin-sponsor-name { font-family: var(--w-font) !i
 
 /* Static logo banner on the home page */
 .qfin-banner-wrap { padding: 2rem 0 0.5rem; }
-.qfin-banner { width: min(760px, 88vw); margin: 0 auto; }
+.qfin-banner { width: min(420px, 70vw); margin: 0 auto; }
+
+/* ================================
+   FULL-WIDTH LAYOUT
+   ================================ */
+.main-content { max-width: none !important; padding: 1.25rem 2rem 2rem !important; margin: 0 !important; }
+.qfin-wrap { max-width: none; padding: 0; }
+.qfin-nav { max-width: none; }
+.qfin-section p, .qfin-section li, .qfin-desc, .schedule-desc { max-width: 100ch; }
+.w98-floaters { justify-content: space-between; margin: 2rem 0 0.5rem; }
+.qfin-profile-list { grid-template-columns: 1fr; }
+@media (min-width: 1100px) { .qfin-profile-list { grid-template-columns: repeat(2, 1fr); } }
+.qfin-sponsors { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+@media (max-width: 768px) {
+  .main-content { padding: 1rem 0.75rem 2rem !important; }
+  .qfin-profile-list { grid-template-columns: 1fr; }
+}

@@ -1,4 +1,4 @@
-/* QFIN 98: taskbar, Start menu, clock and draggable pop-up windows */
+/* QFIN 98: taskbar, Start menu, clock and pop-up windows */
 (function () {
   function $(s, r) { return (r || document).querySelector(s); }
   function $$(s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); }
@@ -10,7 +10,6 @@
   var menu = $('[data-w98-startmenu]');
   var clock = $('[data-w98-clock]', bar);
   var wins = $$('[data-w98-window]');
-  var floatMQ = window.matchMedia('(min-width: 1360px)');
   var z = 10 + wins.length;
 
   /* ---- windows ---- */
@@ -62,30 +61,7 @@
     if (max) max.addEventListener('click', function (e) {
       e.stopPropagation(); w.classList.toggle('is-max'); focusWin(w);
     });
-
-    var handle = $('[data-w98-handle]', w);
-    var area = w.parentElement;
-    var sx, sy, ox, oy, dragging = false;
-    handle.addEventListener('pointerdown', function (e) {
-      if (e.target.closest('button') || !floatMQ.matches || w.classList.contains('is-max')) return;
-      dragging = true; sx = e.clientX; sy = e.clientY; ox = w.offsetLeft; oy = w.offsetTop;
-      try { handle.setPointerCapture(e.pointerId); } catch (err) {}
-      e.preventDefault();
-    });
-    handle.addEventListener('pointermove', function (e) {
-      if (!dragging) return;
-      var nx = Math.max(0, Math.min(area.clientWidth - w.offsetWidth, ox + e.clientX - sx));
-      var ny = Math.max(0, Math.min(area.clientHeight - 60, oy + e.clientY - sy));
-      w.style.left = nx + 'px'; w.style.top = ny + 'px';
-    });
-    function end() { dragging = false; }
-    handle.addEventListener('pointerup', end);
-    handle.addEventListener('pointercancel', end);
   });
-
-  /* Going between wide and narrow layouts resets any dragged positions */
-  var onChange = function () { wins.forEach(function (w) { w.style.left = ''; w.style.top = ''; }); };
-  if (floatMQ.addEventListener) floatMQ.addEventListener('change', onChange); else if (floatMQ.addListener) floatMQ.addListener(onChange);
 
   /* ---- Start menu ---- */
   function setMenu(open) {

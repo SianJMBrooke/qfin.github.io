@@ -1,7 +1,5 @@
-# Photos shown as individual 1998-style pop-up windows on the home page.
-# On wide screens they float in the page margins:
-#   side: left or right margin, top: distance from the top of the page content.
-# On narrower screens they sit in a scrollable row under the welcome text.
+# Photos shown as individual 1998-style pop-up windows in a row on the
+# home page, in this order. (side/top are no longer used.)
 # Photos have had their location data removed. Only add photos that people
 # in them have agreed to.
 
@@ -12,10 +10,10 @@
   side: left
   top: 20
 
-- file: "/assets/images/launch/launch-petals.jpg"
-  title: "petals.jpg"
-  caption: "Rainbow 3D prints on the tables"
-  alt: "Rainbow-coloured 3D-printed petal shapes scattered on a black tablecloth"
+- file: "/assets/images/launch/launch-vulvas.jpg"
+  title: "vulvas.jpg"
+  caption: "Rainbow 3D-printed vulvas"
+  alt: "Rainbow-coloured 3D-printed vulvas scattered on a black tablecloth"
   side: right
   top: 170
 
