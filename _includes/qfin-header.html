@@ -3,19 +3,14 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;600&display=swap">
 <link rel="stylesheet" href="{{ '/assets/css/custom.css' | relative_url }}">
 
-{% if include.home %}
-<!-- Logo banner (home page only) -->
+<!-- Logo, the same on every page -->
 <div class="qfin-banner-wrap">
+  {% if include.home %}
   <img src="{{ '/assets/images/qfin-logo-static.jpg' | relative_url }}" alt="QFIN - Queer and Feminist Informatics Network" class="qfin-banner">
+  {% else %}
+  <a href="{{ '/' | relative_url }}" class="qfin-banner-link"><img src="{{ '/assets/images/qfin-logo-static.jpg' | relative_url }}" alt="QFIN home" class="qfin-banner"></a>
+  {% endif %}
 </div>
-{% else %}
-<!-- Compact header on inner pages -->
-<div class="qfin-compact-header">
-  <a href="{{ '/' | relative_url }}" class="qfin-compact-logo">
-    <img src="{{ '/assets/images/qfin-logo-compact.png' | relative_url }}" alt="QFIN home">
-  </a>
-</div>
-{% endif %}
 
 <!-- Site navigation -->
 <nav class="qfin-nav" aria-label="Main">

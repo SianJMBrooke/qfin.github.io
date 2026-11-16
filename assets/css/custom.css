@@ -897,7 +897,8 @@ a.qfin-cta h3, a.qfin-sponsor .qfin-sponsor-name { font-family: var(--w-font) !i
 
 /* Static logo banner on the home page */
 .qfin-banner-wrap { padding: 2rem 0 0.5rem; }
-.qfin-banner { width: min(420px, 70vw); margin: 0 auto; }
+.qfin-banner { width: min(560px, 82vw); margin: 0 auto; }
+.qfin-banner-link { display: block; width: fit-content; margin: 0 auto; }
 
 /* ================================
    FULL-WIDTH LAYOUT
