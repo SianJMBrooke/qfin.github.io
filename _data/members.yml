@@ -49,3 +49,12 @@
   position: "Junior Researcher, Centrum Wiskunde & Informatica (CWI)"
   profile: "https://www.cwi.nl/en/people/mae-sosto/"
   image: "/assets/images/mae.jpeg"
+
+- name: "Rachna Mallara"
+  role: "Committee member"
+  responsibilities:
+    - "Administrative support for Siân"
+    - "Social media"
+  contact_about: "Admin questions and our social media."
+  email: "r.mallara@uva.nl"
+  position: "Research and Education Officer, Digital Interactions Lab (DILab)"

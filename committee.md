@@ -22,6 +22,8 @@ permalink: /committee/
           <div class="qfin-profile-photo">
             {% if m.image %}
               <img src="{{ m.image | relative_url }}" alt="{{ m.name }} portrait">
+            {% else %}
+              <img src="{{ '/assets/images/icon-192.png' | relative_url }}" alt="" class="qfin-photo-placeholder">
             {% endif %}
           </div>
           <div class="qfin-profile-body">
