@@ -39,7 +39,7 @@ mailing_list_subscribe_url: "https://list.uva.nl/postorius/lists/qfin.list.uva.n
 # Live announcements on the homepage. Paste the Web app URL of the Apps Script
 # in the qfinformatics@gmail.com account here (see tools/announcements-feed.gs).
 # Leave empty to use _data/announcements.yml instead.
-announcements_feed_url: ""
+announcements_feed_url: "https://script.google.com/macros/s/AKfycbyu1RxY2F6rbkX5Kn70771VNi9wNvHLdHsJAZQbgRoktq0B3qw14qlc2QfhRPA9wqgk/exec"
 
 # Public QFIN events calendar (the qfinformatics@gmail.com Google account).
 # The calendar must be set to public in Google Calendar > Settings and sharing.
