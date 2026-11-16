@@ -4,8 +4,8 @@
 /* ================================
    QFIN — Glitch theme
    Palette: logo colours only
-   Cyan #97FFFF · Light grey #C5CACF
-   Dark grey #8F8F8F · White · Black
+   Cyan #97FFFF · Pink #FF9AD5 · Purple #B9A0FF
+   Light grey #C5CACF · Dark grey #8F8F8F · White · Black
    ================================ */
 
 :root{
@@ -17,6 +17,10 @@
   --card:       #0a0a0a;
   --border:     #222222;
   --glow:       rgba(151,255,255,0.3);
+  --pink:       #FF9AD5;
+  --purple:     #B9A0FF;
+  --pink-glow:  rgba(255,154,213,0.35);
+  --purple-glow: rgba(185,160,255,0.3);
 }
 
 /* ================================
@@ -401,7 +405,7 @@ h3, h5 { color: var(--grey-light) !important; }
 
 /* Compact header on inner pages */
 .qfin-compact-header { text-align: center; padding: 1.75rem 0 0.25rem; }
-.qfin-compact-logo img { display: inline-block; height: 72px; width: auto; }
+.qfin-compact-logo img { display: inline-block; height: 110px; width: auto; max-width: 100%; }
 
 /* ================================
    GRIDS, CALLS TO ACTION, BUTTON ROWS
@@ -504,3 +508,72 @@ a.qfin-cta:hover { color: #fff; }
   .qfin-profile-photo img { width: 110px; height: 110px; }
   .qfin-nav { gap: 0.25rem 1rem; font-size: 0.8rem; }
 }
+
+/* ================================
+   PINK / PURPLE ACCENTS
+   (the pink and purple fringes in the QFIN logo)
+   ================================ */
+
+/* Section headings: cyan to purple to pink */
+.qfin-section h2 {
+  background: linear-gradient(90deg, var(--cyan) 0%, var(--purple) 45%, var(--pink) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent !important;
+  display: inline-block;
+}
+
+a:hover { color: var(--pink); }
+
+/* Glitch edges pick up a pink line */
+.glitch-edge {
+  background:
+    repeating-linear-gradient(0deg, transparent 0px, transparent 3px, rgba(151,255,255,0.06) 3px, rgba(151,255,255,0.06) 4px),
+    repeating-linear-gradient(0deg, transparent 0px, transparent 7px, rgba(255,154,213,0.07) 7px, rgba(255,154,213,0.07) 8px),
+    repeating-linear-gradient(0deg, transparent 0px, transparent 11px, rgba(185,160,255,0.06) 11px, rgba(185,160,255,0.06) 12px);
+}
+.glitch-edge--left { border-right-color: rgba(255,154,213,0.25); }
+.glitch-edge--right { border-left-color: rgba(185,160,255,0.25); }
+
+/* Navigation */
+.qfin-nav { border-image: linear-gradient(90deg, transparent, var(--purple), var(--pink), transparent) 1; }
+.qfin-nav a:hover { color: var(--pink); }
+.qfin-nav a.is-active { color: var(--pink); border-bottom-color: var(--pink); }
+
+/* Buttons alternate pink and purple */
+.qfin-btn, .social-links a { border-color: var(--pink); color: var(--pink); }
+.qfin-btn:hover, .social-links a:hover { background: var(--pink); color: #000; box-shadow: 0 0 12px var(--pink-glow); }
+.qfin-actions .qfin-btn:nth-child(even) { border-color: var(--purple); color: var(--purple); }
+.qfin-actions .qfin-btn:nth-child(even):hover { background: var(--purple); color: #000; box-shadow: 0 0 12px var(--purple-glow); }
+.qfin-btn--disabled:hover { background: transparent !important; box-shadow: none !important; }
+
+/* Cards */
+.qfin-card:hover { border-color: var(--purple); }
+.qfin-card.event-hero { border-left: 3px solid var(--pink); }
+.qfin-card.event-past { border-left-color: var(--purple); }
+a.qfin-cta:nth-child(1) h3 { color: var(--cyan) !important; }
+a.qfin-cta:nth-child(2) h3 { color: var(--purple) !important; }
+a.qfin-cta:nth-child(3) h3 { color: var(--pink) !important; }
+
+/* Calendar frame */
+.qfin-calendar { border-left: 3px solid var(--pink); }
+.qfin-calendar--placeholder { border-color: var(--purple); border-left-color: var(--pink); }
+
+/* Events */
+.schedule-time { color: var(--pink); }
+.qfin-schedule summary { color: var(--purple); }
+.qfin-meta strong { color: var(--purple) !important; }
+.workshop-card:hover { border-color: var(--pink); }
+
+/* Committee */
+.qfin-role { color: var(--pink); }
+.qfin-profile-body h4 { color: var(--purple) !important; }
+.qfin-profile:hover .qfin-profile-photo img { border-color: var(--pink); }
+
+/* Get involved */
+.qfin-channel:nth-child(odd) .qfin-channel-label { color: var(--pink); }
+.qfin-channel:nth-child(even) .qfin-channel-label { color: var(--purple); }
+
+/* Publications */
+.pub-year { color: var(--pink); }

@@ -35,10 +35,12 @@ mailing_list_address: "qfin@list.uva.nl"
 # Until then this points at the existing Google Form.
 mailing_list_subscribe_url: "https://docs.google.com/forms/d/e/1FAIpQLScgq7ggljOVLVyLeNbCSD1TisPGPgw7IfzfCVVLvTuo0sI-VQ/viewform?usp=header"
 
-# TODO: paste the Calendar ID of the public QFIN Events Google Calendar
-# (Google Calendar > Settings and sharing > Integrate calendar > Calendar ID).
-# While this is empty the Events page shows a placeholder.
-google_calendar_id: ""
+# Public QFIN events calendar (the qfinformatics@gmail.com Google account).
+# The calendar must be set to public in Google Calendar > Settings and sharing.
+# google_calendar_id: the Calendar ID from "Integrate calendar"
+# google_calendar_add_url: Google's share link, used for "Add to Google Calendar"
+google_calendar_id: "qfinformatics@gmail.com"
+google_calendar_add_url: "https://calendar.google.com/calendar/u/0?cid=cWZpbmZvcm1hdGljc0BnbWFpbC5jb20"
 
 # Survey for people who want to take on a role
 involvement_survey_url: "https://uva.fra1.qualtrics.com/jfe/form/SV_e9HsduKt2iEbJkO"

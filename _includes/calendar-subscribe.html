@@ -2,7 +2,12 @@
 {% if site.google_calendar_id and site.google_calendar_id != "" %}
   {% assign cal_id = site.google_calendar_id | url_encode %}
   <div class="qfin-actions">
-    <a class="qfin-btn" href="https://calendar.google.com/calendar/u/0/r?cid={{ cal_id }}" target="_blank" rel="noopener">Add to Google Calendar</a>
+    {% if site.google_calendar_add_url and site.google_calendar_add_url != "" %}
+      {% assign cal_add = site.google_calendar_add_url %}
+    {% else %}
+      {% assign cal_add = 'https://calendar.google.com/calendar/u/0/r?cid=' | append: cal_id %}
+    {% endif %}
+    <a class="qfin-btn" href="{{ cal_add }}" target="_blank" rel="noopener">Add to Google Calendar</a>
     <a class="qfin-btn" href="webcal://calendar.google.com/calendar/ical/{{ cal_id }}/public/basic.ics">Subscribe in Apple or Outlook</a>
     <a class="qfin-btn" href="https://calendar.google.com/calendar/ical/{{ cal_id }}/public/basic.ics">iCal link</a>
   </div>
