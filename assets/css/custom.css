@@ -4,8 +4,8 @@
 /* ================================
    QFIN — Glitch theme
    Palette: logo colours only
-   Cyan #97FFFF · Light grey #C5CACF
-   Dark grey #8F8F8F · White · Black
+   Cyan #97FFFF · Pink #FF9AD5 · Purple #B9A0FF
+   Light grey #C5CACF · Dark grey #8F8F8F · White · Black
    ================================ */
 
 :root{
@@ -17,6 +17,10 @@
   --card:       #0a0a0a;
   --border:     #222222;
   --glow:       rgba(151,255,255,0.3);
+  --pink:       #FF9AD5;
+  --purple:     #B9A0FF;
+  --pink-glow:  rgba(255,154,213,0.35);
+  --purple-glow: rgba(185,160,255,0.3);
 }
 
 /* ================================
@@ -365,3 +369,542 @@ h3, h5 { color: var(--grey-light) !important; }
     grid-template-columns: 1fr;
   }
 }
+
+/* ================================
+   PAGE-LEVEL OVERRIDES
+   (moved from the old single-page index)
+   ================================ */
+.qfin-section { margin: 3.5rem 0 2.25rem !important; }
+.pub-list { margin: 0; padding-left: 1.25rem; }
+.pub-list li { padding: 0.6rem 0 0.9rem 0; }
+.pub-title, .pub-authors, .pub-venue { font-weight: 400 !important; }
+.pub-links a { color: inherit !important; text-decoration: underline; }
+.pub-links a[data-accent="true"] { color: var(--cyan) !important; }
+
+/* ================================
+   NAVIGATION
+   ================================ */
+.qfin-nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.5rem;
+  margin: 0.5rem auto 1.5rem;
+  padding: 0.75rem 1rem;
+  max-width: 960px;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.qfin-nav a { color: var(--grey-light); padding: 0.2rem 0; border-bottom: 2px solid transparent; }
+.qfin-nav a:hover { color: var(--cyan); }
+.qfin-nav a.is-active { color: var(--cyan); border-bottom-color: var(--cyan); }
+
+/* Compact header on inner pages */
+.qfin-compact-header { text-align: center; padding: 1.75rem 0 0.25rem; }
+.qfin-compact-logo img { display: inline-block; height: 110px; width: auto; max-width: 100%; }
+
+/* ================================
+   GRIDS, CALLS TO ACTION, BUTTON ROWS
+   ================================ */
+.qfin-grid--3 { grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); }
+.qfin-actions { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
+.qfin-actions .qfin-btn { margin-right: 0; }
+.qfin-btn--disabled { opacity: 0.4; cursor: not-allowed; }
+
+a.qfin-cta { display: block; color: var(--grey-light); }
+a.qfin-cta h3 { margin-top: 0; color: var(--cyan) !important; font-size: 1rem; }
+a.qfin-cta p { margin-bottom: 0; line-height: 1.6; font-size: 0.95rem; }
+a.qfin-cta:hover { color: #fff; }
+
+/* ================================
+   CALENDAR
+   ================================ */
+.qfin-calendar {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--cyan);
+  border-radius: 6px;
+  overflow: hidden;
+}
+.qfin-calendar--placeholder {
+  background: var(--card);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: var(--grey-light);
+  padding: 2rem;
+  border-style: dashed;
+}
+.qfin-calendar--placeholder p { margin: 0.25rem 0; }
+.qfin-calendar--placeholder code { color: var(--cyan); background: transparent; }
+
+/* ================================
+   EVENTS
+   ================================ */
+.qfin-card.event-hero + .qfin-card.event-hero { margin-top: 1.25rem; }
+.qfin-card.event-past { border-left-color: var(--grey); }
+.qfin-schedule { margin-top: 1rem; }
+.qfin-schedule summary {
+  cursor: pointer;
+  color: var(--cyan);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+/* ================================
+   COMMITTEE PROFILES
+   ================================ */
+.qfin-profile-list { display: grid; gap: 1.25rem; }
+.qfin-profile { display: grid; grid-template-columns: 140px 1fr; gap: 1.5rem; align-items: start; }
+.qfin-profile-photo img {
+  width: 140px; height: 140px; border-radius: 50%; object-fit: cover;
+  border: 2px solid var(--border); background: #111;
+  transition: border-color 0.3s;
+}
+.qfin-profile:hover .qfin-profile-photo img { border-color: var(--cyan); }
+.qfin-profile-body h3 { margin: 0 0 0.2rem 0; color: #fff !important; }
+.qfin-profile-body h4 {
+  margin: 1rem 0 0.3rem;
+  font-size: 0.8rem;
+  color: var(--cyan) !important;
+}
+.qfin-role {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  color: var(--cyan);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 0.85rem;
+  margin-bottom: 0.4rem;
+}
+.qfin-resp { margin: 0; padding-left: 1.1rem; color: var(--grey-light); font-size: 0.95rem; }
+.qfin-tbc { color: var(--grey) !important; font-style: italic; text-transform: none; letter-spacing: 0; }
+.qfin-profile-body p { margin: 0; }
+.qfin-profile-links { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1rem; font-size: 0.9rem; }
+
+/* ================================
+   CHANNELS (Get involved)
+   ================================ */
+.qfin-channel h3 { margin-top: 0.25rem; color: #fff !important; }
+.qfin-channel p { color: var(--grey-light); line-height: 1.6; }
+.qfin-channel-label {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--cyan);
+}
+
+@media (max-width: 768px){
+  .qfin-profile { grid-template-columns: 1fr; }
+  .qfin-profile-photo img { width: 110px; height: 110px; }
+  .qfin-nav { gap: 0.25rem 1rem; font-size: 0.8rem; }
+}
+
+/* ================================
+   PINK / PURPLE ACCENTS
+   (the pink and purple fringes in the QFIN logo)
+   ================================ */
+
+/* Section headings: cyan to purple to pink */
+.qfin-section h2 {
+  background: linear-gradient(90deg, var(--cyan) 0%, var(--purple) 45%, var(--pink) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent !important;
+  display: inline-block;
+}
+
+a:hover { color: var(--pink); }
+
+/* Glitch edges pick up a pink line */
+.glitch-edge {
+  background:
+    repeating-linear-gradient(0deg, transparent 0px, transparent 3px, rgba(151,255,255,0.06) 3px, rgba(151,255,255,0.06) 4px),
+    repeating-linear-gradient(0deg, transparent 0px, transparent 7px, rgba(255,154,213,0.07) 7px, rgba(255,154,213,0.07) 8px),
+    repeating-linear-gradient(0deg, transparent 0px, transparent 11px, rgba(185,160,255,0.06) 11px, rgba(185,160,255,0.06) 12px);
+}
+.glitch-edge--left { border-right-color: rgba(255,154,213,0.25); }
+.glitch-edge--right { border-left-color: rgba(185,160,255,0.25); }
+
+/* Navigation */
+.qfin-nav { border-image: linear-gradient(90deg, transparent, var(--purple), var(--pink), transparent) 1; }
+.qfin-nav a:hover { color: var(--pink); }
+.qfin-nav a.is-active { color: var(--pink); border-bottom-color: var(--pink); }
+
+/* Buttons alternate pink and purple */
+.qfin-btn, .social-links a { border-color: var(--pink); color: var(--pink); }
+.qfin-btn:hover, .social-links a:hover { background: var(--pink); color: #000; box-shadow: 0 0 12px var(--pink-glow); }
+.qfin-actions .qfin-btn:nth-child(even) { border-color: var(--purple); color: var(--purple); }
+.qfin-actions .qfin-btn:nth-child(even):hover { background: var(--purple); color: #000; box-shadow: 0 0 12px var(--purple-glow); }
+.qfin-btn--disabled:hover { background: transparent !important; box-shadow: none !important; }
+
+/* Cards */
+.qfin-card:hover { border-color: var(--purple); }
+.qfin-card.event-hero { border-left: 3px solid var(--pink); }
+.qfin-card.event-past { border-left-color: var(--purple); }
+a.qfin-cta:nth-child(1) h3 { color: var(--cyan) !important; }
+a.qfin-cta:nth-child(2) h3 { color: var(--purple) !important; }
+a.qfin-cta:nth-child(3) h3 { color: var(--pink) !important; }
+
+/* Calendar frame */
+.qfin-calendar { border-left: 3px solid var(--pink); }
+.qfin-calendar--placeholder { border-color: var(--purple); border-left-color: var(--pink); }
+
+/* Events */
+.schedule-time { color: var(--pink); }
+.qfin-schedule summary { color: var(--purple); }
+.qfin-meta strong { color: var(--purple) !important; }
+.workshop-card:hover { border-color: var(--pink); }
+
+/* Committee */
+.qfin-role { color: var(--pink); }
+.qfin-profile-body h4 { color: var(--purple) !important; }
+.qfin-profile:hover .qfin-profile-photo img { border-color: var(--pink); }
+
+/* Get involved */
+.qfin-channel:nth-child(odd) .qfin-channel-label { color: var(--pink); }
+.qfin-channel:nth-child(even) .qfin-channel-label { color: var(--purple); }
+
+/* Publications */
+.pub-year { color: var(--pink); }
+
+/* Work with us strip on the home page */
+.qfin-partner-strip {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+  gap: 1rem; margin: 2.5rem 0 1rem;
+  border-image: linear-gradient(90deg, var(--purple), var(--pink)) 1;
+}
+.qfin-partner-strip h3 { margin: 0 0 0.25rem; color: var(--pink) !important; font-size: 1rem; }
+.qfin-partner-strip p { margin: 0; color: var(--grey-light); }
+
+/* Sponsors */
+.qfin-sponsors { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
+a.qfin-sponsor { display: flex; flex-direction: column; gap: 0.25rem; color: var(--grey-light); }
+a.qfin-sponsor img { height: 40px; width: auto; align-self: flex-start; margin-bottom: 0.4rem; }
+.qfin-sponsor-name {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  text-transform: uppercase; letter-spacing: 0.5px; color: #fff;
+}
+a.qfin-sponsor:hover .qfin-sponsor-name { color: var(--pink); }
+.qfin-subhead { margin: 1.5rem 0 0.75rem; font-size: 0.85rem; color: var(--purple) !important; }
+
+/* =====================================================
+   QFIN 98: dark Windows 98 theme in the QFIN colours
+   ===================================================== */
+:root {
+  --w-face:   #1b1a22;
+  --w-face-2: #23222c;
+  --w-hi:     #6d6a80;
+  --w-light:  #3a3846;
+  --w-shade:  #0b0a10;
+  --w-title:  linear-gradient(90deg, var(--purple), var(--pink));
+  --w-title-off: linear-gradient(90deg, #3a3846, #5a5770);
+  --w-font:   "Pixelify Sans", "MS Sans Serif", Tahoma, Geneva, sans-serif;
+  --w-raised: inset 1px 1px var(--w-light), inset -1px -1px var(--w-shade);
+}
+body { padding-bottom: 44px; overflow-x: clip; }
+::selection { background: var(--pink); color: #000; }
+
+/* ---- Sections become windows ---- */
+.qfin-section {
+  margin: 2.75rem 0 !important;
+  padding: 3px 3px 18px;
+  background: var(--w-face);
+  border: 1px solid;
+  border-color: var(--w-hi) #000 #000 var(--w-hi);
+  box-shadow: var(--w-raised), 6px 6px 0 rgba(185,160,255,0.16);
+}
+.qfin-section > * { margin-left: 16px; margin-right: 16px; }
+.qfin-section > h2,
+.qfin-section > h2:first-child {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin: 0 0 16px 0 !important;
+  padding: 4px 4px 4px 8px;
+  background: var(--w-title);
+  -webkit-background-clip: border-box;
+  background-clip: border-box;
+  -webkit-text-fill-color: #0b0a10;
+  color: #0b0a10 !important;
+  font-family: var(--w-font) !important;
+  font-weight: 600;
+  font-size: 1.05rem;
+  letter-spacing: 0.4px;
+  text-transform: none;
+  line-height: 1.25;
+}
+.qfin-section > h2::after {
+  content: "";
+  flex: 0 0 52px;
+  height: 14px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='52' height='14' viewBox='0 0 52 14'%3E%3Crect x='0' y='0' width='16' height='14' fill='%23000'/%3E%3Crect x='0' y='0' width='15' height='13' fill='%236d6a80'/%3E%3Crect x='1' y='1' width='14' height='12' fill='%230b0a10'/%3E%3Crect x='1' y='1' width='13' height='11' fill='%233a3846'/%3E%3Crect x='2' y='2' width='12' height='10' fill='%231b1a22'/%3E%3Crect x='18' y='0' width='16' height='14' fill='%23000'/%3E%3Crect x='18' y='0' width='15' height='13' fill='%236d6a80'/%3E%3Crect x='19' y='1' width='14' height='12' fill='%230b0a10'/%3E%3Crect x='19' y='1' width='13' height='11' fill='%233a3846'/%3E%3Crect x='20' y='2' width='12' height='10' fill='%231b1a22'/%3E%3Crect x='36' y='0' width='16' height='14' fill='%23000'/%3E%3Crect x='36' y='0' width='15' height='13' fill='%236d6a80'/%3E%3Crect x='37' y='1' width='14' height='12' fill='%230b0a10'/%3E%3Crect x='37' y='1' width='13' height='11' fill='%233a3846'/%3E%3Crect x='38' y='2' width='12' height='10' fill='%231b1a22'/%3E%3Crect x='4' y='9' width='6' height='2' fill='%23ece9f5'/%3E%3Crect x='22' y='3' width='8' height='8' fill='none' stroke='%23ece9f5' stroke-width='1'/%3E%3Crect x='22' y='3' width='8' height='2' fill='%23ece9f5'/%3E%3Cpath d='M40.5 3.5l6 6M46.5 3.5l-6 6' stroke='%23ece9f5' stroke-width='1.6'/%3E%3C/svg%3E") no-repeat;
+}
+.qfin-section h3, .qfin-section h4 { font-family: var(--w-font) !important; letter-spacing: 0.3px; }
+
+/* ---- Panels and cards ---- */
+.qfin-card {
+  background: var(--w-face-2);
+  border-radius: 0;
+  border: 1px solid;
+  border-color: var(--w-hi) #000 #000 var(--w-hi);
+  box-shadow: var(--w-raised);
+}
+.qfin-card:hover { border-color: var(--w-hi) #000 #000 var(--w-hi); box-shadow: var(--w-raised), 0 0 0 1px var(--purple); }
+.qfin-card.event-hero, .qfin-card.event-past { border-left: 1px solid var(--w-hi); }
+.qfin-card.event-hero { border-top: 3px solid var(--pink); }
+.qfin-card.event-past { border-top: 3px solid var(--purple); }
+a.qfin-cta:active, a.qfin-sponsor:active {
+  border-color: #000 var(--w-hi) var(--w-hi) #000;
+  box-shadow: inset 1px 1px var(--w-shade);
+}
+a.qfin-cta h3, a.qfin-sponsor .qfin-sponsor-name { font-family: var(--w-font) !important; text-transform: none; }
+.workshop-card { border-radius: 0; border: 1px solid; border-color: #000 var(--w-hi) var(--w-hi) #000; background: #121118; }
+.qfin-partner-strip { border-image: none; border-top: 3px solid var(--pink); }
+
+/* ---- Buttons ---- */
+.qfin-btn, .qfin-actions .qfin-btn:nth-child(even) {
+  border-radius: 0;
+  background: var(--w-face-2);
+  border: 1px solid;
+  border-color: var(--w-hi) #000 #000 var(--w-hi);
+  box-shadow: var(--w-raised);
+  font-family: var(--w-font);
+  font-weight: 600;
+  text-transform: none;
+  letter-spacing: 0.3px;
+  font-size: 0.9rem;
+  padding: 0.45rem 1rem;
+}
+.qfin-btn:hover, .qfin-actions .qfin-btn:nth-child(even):hover {
+  background: var(--w-light);
+  color: #fff;
+  box-shadow: var(--w-raised);
+}
+.qfin-btn:active, .qfin-actions .qfin-btn:nth-child(even):active {
+  border-color: #000 var(--w-hi) var(--w-hi) #000;
+  box-shadow: inset 1px 1px var(--w-shade);
+}
+.qfin-btn:focus-visible, .qfin-nav a:focus-visible, .w98-task:focus-visible, .w98-start:focus-visible {
+  outline: 1px dotted #fff; outline-offset: -4px;
+}
+
+/* ---- Navigation as a toolbar ---- */
+.qfin-nav {
+  border-image: none;
+  border: 1px solid;
+  border-color: var(--w-hi) #000 #000 var(--w-hi);
+  background: var(--w-face);
+  box-shadow: var(--w-raised);
+  padding: 3px;
+  gap: 2px;
+  font-family: var(--w-font);
+  text-transform: none;
+  font-size: 0.95rem;
+  letter-spacing: 0.3px;
+}
+.qfin-nav a {
+  padding: 4px 12px;
+  border: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+  color: var(--grey-light);
+}
+.qfin-nav a:hover { border-color: var(--w-hi) #000 #000 var(--w-hi); color: #fff; }
+.qfin-nav a.is-active {
+  border-color: #000 var(--w-hi) var(--w-hi) #000;
+  background: #121118;
+  color: var(--pink);
+}
+
+/* ---- Calendar, photos, status-bar footer ---- */
+.qfin-calendar {
+  border-radius: 0;
+  border: 2px solid;
+  border-color: var(--w-shade) var(--w-hi) var(--w-hi) var(--w-shade);
+}
+.qfin-calendar--placeholder { border-style: solid; border-color: var(--w-shade) var(--w-hi) var(--w-hi) var(--w-shade); }
+.qfin-profile-photo img {
+  border-radius: 0;
+  border: 2px solid;
+  border-color: var(--w-shade) var(--w-hi) var(--w-hi) var(--w-shade);
+}
+.footer-note {
+  display: flex; flex-direction: column; gap: 4px;
+  margin-top: 2.5rem; padding: 4px;
+  border: 1px solid; border-color: var(--w-hi) #000 #000 var(--w-hi);
+  background: var(--w-face);
+  box-shadow: var(--w-raised);
+  font-family: var(--w-font);
+  font-size: 0.8rem;
+  text-align: left;
+}
+.footer-note a { color: var(--grey-light); }
+.footer-note a:hover { color: var(--pink); }
+.w98-field {
+  display: block;
+  padding: 3px 8px;
+  border: 1px solid; border-color: var(--w-shade) var(--w-hi) var(--w-hi) var(--w-shade);
+}
+
+/* ---- Pop-up windows ---- */
+.w98-window {
+  width: 220px;
+  background: var(--w-face);
+  padding: 3px;
+  border: 1px solid;
+  border-color: var(--w-hi) #000 #000 var(--w-hi);
+  box-shadow: var(--w-raised), 5px 5px 0 rgba(255,154,213,0.18);
+  font: 12px var(--w-font);
+  color: var(--grey-light);
+  user-select: none;
+  -webkit-user-select: none;
+}
+.w98-window.is-hidden { display: none !important; }
+.w98-titlebar {
+  display: flex; justify-content: space-between; align-items: center; gap: 6px;
+  padding: 2px 2px 2px 5px;
+  background: var(--w-title-off);
+  color: #a9a6ba;
+  font-weight: 600;
+  touch-action: none;
+}
+.w98-window.is-active .w98-titlebar { background: var(--w-title); color: #0b0a10; }
+.w98-title { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 13px; }
+.w98-controls { display: inline-flex; flex-shrink: 0; }
+.w98-btn {
+  width: 16px; height: 14px; padding: 0; margin-left: 2px;
+  display: inline-flex; align-items: center; justify-content: center;
+  background: var(--w-face); color: #ece9f5;
+  border: 1px solid; border-color: var(--w-hi) #000 #000 var(--w-hi);
+  box-shadow: var(--w-raised);
+  font: bold 9px/1 Tahoma, Verdana, sans-serif;
+  cursor: pointer;
+}
+.w98-btn:active { border-color: #000 var(--w-hi) var(--w-hi) #000; box-shadow: inset 1px 1px var(--w-shade); }
+.w98-menubar { display: flex; gap: 12px; padding: 3px 4px 2px; font-size: 12px; color: #cfcbe0; }
+.w98-body {
+  background: #000; line-height: 0;
+  border: 2px solid; border-color: var(--w-shade) var(--w-hi) var(--w-hi) var(--w-shade);
+}
+.w98-body img { width: 100%; height: auto; display: block; pointer-events: none; }
+.w98-statusbar { margin-top: 3px; }
+.w98-statusbar span {
+  display: block; padding: 1px 5px; font-size: 11px;
+  border: 1px solid; border-color: var(--w-shade) var(--w-hi) var(--w-hi) var(--w-shade);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.w98-window.is-max {
+  position: fixed !important;
+  left: 50% !important; top: 50% !important;
+  transform: translate(-50%, -50%);
+  width: min(520px, 92vw, calc((100vh - 140px) * 0.75));
+  z-index: 20000 !important;
+}
+
+/* Photo windows: a scrollable row on narrower screens... */
+.w98-floaters {
+  display: flex; gap: 18px;
+  overflow-x: auto;
+  padding: 6px 8px 18px 2px;
+  margin: 1rem 0 0.5rem;
+  scroll-snap-type: x mandatory;
+  scrollbar-color: var(--w-hi) var(--w-face);
+}
+.w98-floaters .w98-window { position: relative; flex: 0 0 220px; scroll-snap-align: start; }
+.w98-floaters .w98-titlebar { cursor: default; }
+
+/* ...and floating in the page margins on wide screens */
+@media (min-width: 1360px) {
+  .qfin-wrap { position: relative; }
+  .w98-floaters {
+    position: absolute; top: 0; left: calc(50% - 50vw); width: 100vw; height: 100%;
+    display: block; overflow: visible; margin: 0; padding: 0;
+    pointer-events: none; z-index: 5;
+  }
+  .w98-floaters .w98-window { position: absolute; top: var(--top, 0); pointer-events: auto; }
+  .w98-floaters .w98-window.side-left { left: calc(50% - 620px); }
+  .w98-floaters .w98-window.side-right { left: calc(50% + 400px); }
+  .w98-floaters .w98-titlebar { cursor: move; }
+}
+
+/* ---- Taskbar and Start menu ---- */
+.w98-taskbar {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 10000;
+  display: flex; align-items: center; gap: 4px;
+  height: 36px; padding: 3px 4px;
+  background: var(--w-face);
+  border-top: 1px solid var(--w-hi);
+  box-shadow: inset 0 1px var(--w-light);
+  font-family: var(--w-font);
+}
+.w98-start, .w98-task {
+  display: inline-flex; align-items: center; gap: 6px;
+  height: 28px; padding: 0 10px;
+  background: var(--w-face); color: var(--grey-light);
+  border: 1px solid; border-color: var(--w-hi) #000 #000 var(--w-hi);
+  box-shadow: var(--w-raised);
+  font: 600 13px var(--w-font);
+  cursor: pointer;
+}
+.w98-start { color: #fff; flex-shrink: 0; }
+.w98-start img { height: 14px; width: auto; }
+.w98-start.is-pressed, .w98-task.is-pressed {
+  border-color: #000 var(--w-hi) var(--w-hi) #000;
+  box-shadow: inset 1px 1px var(--w-shade);
+  background: repeating-conic-gradient(#14131a 0 25%, #24232d 0 50%) 0 0 / 2px 2px;
+  color: var(--pink);
+}
+.w98-tasks { display: flex; gap: 3px; flex: 1; min-width: 0; overflow-x: auto; scrollbar-width: none; }
+.w98-tasks::-webkit-scrollbar { display: none; }
+.w98-task { flex: 0 1 170px; min-width: 70px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; display: block; line-height: 26px; text-align: left; }
+.w98-task-page { cursor: default; }
+.w98-clock {
+  flex-shrink: 0; height: 28px; line-height: 26px; padding: 0 12px;
+  border: 1px solid; border-color: var(--w-shade) var(--w-hi) var(--w-hi) var(--w-shade);
+  color: var(--cyan); font-size: 13px;
+}
+.w98-startmenu {
+  position: fixed; left: 4px; bottom: 38px; z-index: 10001;
+  display: none;
+  width: 250px;
+  background: var(--w-face);
+  border: 1px solid; border-color: var(--w-hi) #000 #000 var(--w-hi);
+  box-shadow: var(--w-raised), 4px 4px 0 rgba(0,0,0,0.6);
+  font-family: var(--w-font);
+}
+.w98-startmenu.is-open { display: flex; }
+.w98-startmenu-stripe {
+  flex: 0 0 30px;
+  background: linear-gradient(0deg, var(--pink), var(--purple));
+  display: flex; align-items: flex-end; justify-content: center;
+  padding-bottom: 8px;
+}
+.w98-startmenu-stripe span {
+  writing-mode: vertical-rl; transform: rotate(180deg);
+  color: #0b0a10; font-size: 18px; letter-spacing: 1px; font-weight: 400;
+}
+.w98-startmenu-stripe b { font-weight: 600; color: #fff; }
+.w98-startmenu-items { flex: 1; display: flex; flex-direction: column; padding: 3px 0; }
+.w98-startmenu-items a { padding: 7px 14px; color: var(--grey-light); font-size: 14px; }
+.w98-startmenu-items a:hover, .w98-startmenu-items a:focus-visible { background: var(--w-title); color: #0b0a10; outline: none; }
+.w98-startmenu-items hr { height: 0; background: none; padding: 0; border: 0; border-top: 1px solid #000; border-bottom: 1px solid var(--w-hi); margin: 3px 6px; }
+
+@media (max-width: 768px) {
+  .qfin-section > * { margin-left: 10px; margin-right: 10px; }
+  .w98-task { flex-basis: 110px; min-width: 60px; }
+  .w98-clock { padding: 0 8px; }
+}
+
+/* Cayman's own footer is replaced by the status bar */
+.site-footer { display: none; }

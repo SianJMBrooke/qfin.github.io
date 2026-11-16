@@ -1,0 +1,59 @@
+{% assign event = include.event %}
+<div class="qfin-card event-hero{% if include.past %} event-past{% endif %}">
+  <h3 style="color:#fff; margin-top:0;">{{ event.title }}</h3>
+  <div class="qfin-meta"><strong style="color:var(--cyan);">Date:</strong> {{ event.date | date: "%A, %d %B %Y" }}</div>
+  {% if event.time %}<div class="qfin-meta"><strong style="color:var(--cyan);">Time:</strong> {{ event.time }}</div>{% endif %}
+  <div class="qfin-meta">
+    <strong style="color:var(--cyan);">Location:</strong>
+    {% if event.location %}
+      {{ event.location }}
+    {% else %}
+      <a href="https://lab42.uva.nl/" target="_blank" rel="noopener">Lab42, Amsterdam Science Park</a>
+    {% endif %}
+  </div>
+  {% unless include.past %}
+  <div class="qfin-meta" style="margin-top:0.3rem;"><strong style="color:var(--cyan);">Who?</strong> Students, staff, researchers, artists, activists, anyone curious about queer & feminist informatics.</div>
+  {% endunless %}
+  {% if event.description %}<p class="qfin-desc">{{ event.description }}</p>{% endif %}
+
+  {% if event.schedule %}
+    <details class="qfin-schedule"{% unless include.past %} open{% endunless %}>
+      <summary>Schedule</summary>
+      {% for s in event.schedule %}
+        <div class="schedule-item">
+          <div>
+            <div class="schedule-time">{{ s.time }}</div>
+            <div class="schedule-location">{{ s.room }}</div>
+          </div>
+          <div>
+            <div class="schedule-title">{{ s.title }}</div>
+            {% if s.description and s.description != "" %}
+              <div class="schedule-desc">{{ s.description }}</div>
+            {% endif %}
+            {% if s.workshops %}
+              <div class="workshop-grid">
+                {% for w in s.workshops %}
+                  <div class="workshop-card">
+                    <h4>{{ w.title }}</h4>
+                    <p>{{ w.description }}</p>
+                  </div>
+                {% endfor %}
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      {% endfor %}
+    </details>
+  {% endif %}
+
+  {% unless include.past %}
+  <div class="qfin-actions">
+    {% if event.signup_url %}
+      <a class="qfin-btn" href="{{ event.signup_url }}" target="_blank" rel="noopener">Register Here</a>
+    {% endif %}
+    {% if event.poster_url %}
+      <a class="qfin-btn" href="{{ event.poster_url }}" target="_blank" rel="noopener">Submit a Poster</a>
+    {% endif %}
+  </div>
+  {% endunless %}
+</div>

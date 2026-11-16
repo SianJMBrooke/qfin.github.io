@@ -1,0 +1,11 @@
+{% if site.data.sponsors and site.data.sponsors.size > 0 %}
+<div class="qfin-sponsors">
+  {% for s in site.data.sponsors %}
+    <a class="qfin-card qfin-sponsor" href="{{ s.url }}" target="_blank" rel="noopener">
+      {% if s.logo %}<img src="{{ s.logo | relative_url }}" alt="{{ s.name }}">{% endif %}
+      <span class="qfin-sponsor-name">{{ s.name }}</span>
+      {% if s.detail %}<span class="qfin-small">{{ s.detail }}</span>{% endif %}
+    </a>
+  {% endfor %}
+</div>
+{% endif %}

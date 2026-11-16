@@ -1,0 +1,10 @@
+# Sponsors and supporters, shown on the About and Work with us pages.
+# logo is optional (a path under /assets/images/). Without one the name is shown.
+
+- name: "Informatics Institute (IvI)"
+  detail: "University of Amsterdam"
+  url: "https://ivi.uva.nl/"
+
+- name: "Lab42"
+  detail: "Amsterdam Science Park"
+  url: "https://lab42.uva.nl/"

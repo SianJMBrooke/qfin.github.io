@@ -1,0 +1,25 @@
+{% comment %}
+  Launch photos, each in its own 1998-style pop-up window.
+  Data: _data/gallery.yml. Behaviour: /assets/js/w98.js
+{% endcomment %}
+{% if site.data.gallery and site.data.gallery.size > 0 %}
+<div class="w98-floaters" data-w98-floaters aria-label="Photos from the QFIN launch">
+  {% for p in site.data.gallery %}
+  <div class="w98-window side-{{ p.side | default: 'left' }}" style="--top: {{ p.top | default: 0 }}px;" data-w98-window data-w98-title="{{ p.title }}">
+    <div class="w98-titlebar" data-w98-handle>
+      <span class="w98-title">{{ p.title }}</span>
+      <span class="w98-controls">
+        <button type="button" class="w98-btn" aria-label="Minimise {{ p.title }}" data-w98-min>_</button>
+        <button type="button" class="w98-btn" aria-label="Maximise {{ p.title }}" data-w98-max>&#x25A1;</button>
+        <button type="button" class="w98-btn" aria-label="Close {{ p.title }}" data-w98-close>&#x2715;</button>
+      </span>
+    </div>
+    <div class="w98-menubar" aria-hidden="true"><span><u>F</u>ile</span><span><u>E</u>dit</span><span><u>V</u>iew</span><span><u>H</u>elp</span></div>
+    <div class="w98-body">
+      <img src="{{ p.file | relative_url }}" alt="{{ p.alt }}" loading="lazy" draggable="false">
+    </div>
+    <div class="w98-statusbar"><span>{{ p.caption }}</span></div>
+  </div>
+  {% endfor %}
+</div>
+{% endif %}

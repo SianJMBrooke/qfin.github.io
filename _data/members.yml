@@ -1,13 +1,27 @@
+# Committee members, shown on the Committee page.
+#
+# role:            your role on the QFIN committee
+# responsibilities: what you look after (a short list)
+# contact_about:   one line on what people should contact you about
+#
+# Leave a field empty ("") and the page shows "to be confirmed".
+# Quote values that contain colons or non-ASCII characters.
 
 - name: "Dr Siân Brooke"
   pronouns: "she/her"
+  role: "Co-founder"
+  responsibilities: []
+  contact_about: ""
   email: "s.j.m.brooke@uva.nl"
-  position: "Asstant Professor (MacGillavry Fellowship), Digital Interactions Lab (DILab)"
+  position: "Assistant Professor (MacGillavry Fellowship), Digital Interactions Lab (DILab)"
   profile: "https://www.uva.nl/en/profile/b/r/s.j.m.brooke/s.j.m.brooke.html"
   image: "/assets/images/sian.jpeg"
 
 - name: "Dr Delfi Martinez Pandiani"
   pronouns: "they/them"
+  role: "Co-founder"
+  responsibilities: []
+  contact_about: ""
   email: "d.s.martinezpandiani@uva.nl"
   position: "Assistant Professor of Cultural Data Analysis, Department of Media Studies"
   profile: "https://www.uva.nl/en/profile/m/a/d.s.c.martinez-pandiani/d.s.c.martinez-pandiani.html"
@@ -15,6 +29,9 @@
 
 - name: "Maria Mlocka"
   pronouns: "she/her"
+  role: "Founding member"
+  responsibilities: []
+  contact_about: ""
   email: "m.l.mlocka@uva.nl"
   position: "Doctoral Student, Informatics Institute (IvI)"
   profile: "https://www.uva.nl/en/profile/m/l/m.l.mlocka/m.l.mlocka.html"
@@ -22,6 +39,9 @@
 
 - name: "Mae Sosto"
   pronouns: "they/them"
+  role: "Founding member"
+  responsibilities: []
+  contact_about: ""
   email: "mae.sosto@cwi.nl"
   position: "Junior Researcher, Centrum Wiskunde & Informatica (CWI)"
   profile: "https://www.cwi.nl/en/people/mae-sosto/"
