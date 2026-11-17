@@ -21,8 +21,10 @@
 - name: "Dr Delfi Martinez Pandiani"
   pronouns: "they/them"
   role: "Co-founder"
-  responsibilities: []
-  contact_about: ""
+  responsibilities:
+    - "The big picture of QFIN event programming and societal engagement"
+    - "Diversity and variety of events, speakers and (research) themes"
+  contact_about: "Event, speaker, workshop and topic ideas and suggestions, and joining one of the working groups."
   email: "d.s.martinezpandiani@uva.nl"
   position: "Assistant Professor of Cultural Data Analysis, Department of Media Studies"
   profile: "https://www.uva.nl/en/profile/m/a/d.s.c.martinez-pandiani/d.s.c.martinez-pandiani.html"
