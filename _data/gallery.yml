@@ -1,39 +1,160 @@
-# Photos shown as individual 1998-style pop-up windows in a row on the
-# home page, in this order. (side/top are no longer used.)
+# Photos shown as 1998-style pop-up windows in a row, one set per page.
+# Add a set to a page with {% include popup-gallery.html set="about" %}
+# (the home page uses "home").
+#
+# polaroid: true  gives the window a dark viewer background, for the
+#                 cut-out polaroids with transparent corners.
+# credit:         shown in a second pane of the status bar.
+#
 # Photos have had their location data removed. Only add photos that people
 # in them have agreed to.
 
-- file: "/assets/images/launch/launch-atrium.jpg"
-  title: "atrium.jpg"
-  caption: "Setting up in the Lab42 atrium"
-  alt: "Round tables with black tablecloths set out in the Lab42 atrium, with a green plant wall behind"
-  side: left
-  top: 20
+home:
+  - file: "/assets/images/launch/launch-atrium.jpg"
+    title: "atrium.jpg"
+    caption: "Setting up in the Lab42 atrium"
+    alt: "Round tables with black tablecloths set out in the Lab42 atrium, with a green plant wall behind"
 
-- file: "/assets/images/launch/launch-vulvas.jpg"
-  title: "vulvas.jpg"
-  caption: "Rainbow 3D-printed vulvas"
-  alt: "Rainbow-coloured 3D-printed vulvas scattered on a black tablecloth"
-  side: right
-  top: 170
+  - file: "/assets/images/launch/launch-vulvas.jpg"
+    title: "vulvas.jpg"
+    caption: "Rainbow 3D-printed vulvas"
+    alt: "Rainbow-coloured 3D-printed vulvas scattered on a black tablecloth"
 
-- file: "/assets/images/launch/launch-stickers.jpg"
-  title: "stickers.bmp"
-  caption: "Stickers and badges"
-  alt: "A hand holding a red tube next to QFIN stickers and badges on a black tablecloth"
-  side: left
-  top: 500
+  - file: "/assets/images/launch/launch-stickers.jpg"
+    title: "stickers.bmp"
+    caption: "Stickers and badges"
+    alt: "A hand holding a red tube next to QFIN stickers and badges on a black tablecloth"
 
-- file: "/assets/images/launch/launch-catering.jpg"
-  title: "borrel.jpg"
-  caption: "Snacks for the borrel"
-  alt: "Platters of sandwiches and vegetables on a table"
-  side: right
-  top: 660
+  - file: "/assets/images/launch/launch-catering.jpg"
+    title: "borrel.jpg"
+    caption: "Snacks for the borrel"
+    alt: "Platters of sandwiches and vegetables on a table"
 
-- file: "/assets/images/launch/launch-lab42.jpg"
-  title: "lab42_from_above.jpg"
-  caption: "Lab42 from the top floor"
-  alt: "The Lab42 atrium seen from an upper floor, with tables and plants below"
-  side: left
-  top: 990
+  - file: "/assets/images/launch/launch-lab42.jpg"
+    title: "lab42_from_above.jpg"
+    caption: "Lab42 from the top floor"
+    alt: "The Lab42 atrium seen from an upper floor, with tables and plants below"
+
+about:
+  - file: "/assets/images/photos/autumn-queergen-poster.webp"
+    title: "queergen_poster.jpg"
+    caption: "QUEERGEN poster at the Autumn Open Event"
+    alt: "Polaroid of a research poster titled QUEERGEN, on how language models reflect societal norms on gender and sexuality"
+    polaroid: true
+
+  - file: "/assets/images/photos/faceoff-drag-is-old-tech.webp"
+    title: "drag_is_old_tech.bmp"
+    caption: "Drag is old technology"
+    alt: "Polaroid of three people posing in front of a screen that reads Drag is old technology"
+    polaroid: true
+
+  - file: "/assets/images/photos/autumn-error-screen.webp"
+    title: "identity_not_verified.exe"
+    caption: "Identity could not be verified"
+    alt: "Polaroid of a purple screen full of pop-up error messages, including Identity could not be verified and Unexpected input detected"
+    polaroid: true
+
+  - file: "/assets/images/photos/autumn-machine.webp"
+    title: "machine.jpg"
+    caption: "A demo at the Autumn Open Event"
+    alt: "Polaroid of a clear acrylic machine with two small screens and a big red button on a table"
+    polaroid: true
+
+  - file: "/assets/images/photos/dsday-body-map-wall.webp"
+    title: "body_maps.jpg"
+    caption: "Body maps from Queering Data Biographies"
+    alt: "Hand-drawn body map worksheets and blue sticky notes pinned to a white wall"
+
+events:
+  - file: "/assets/images/photos/autumn-table-talk.webp"
+    title: "queering_the_table.jpg"
+    caption: "Discussion tables at the Autumn Open Event"
+    alt: "Polaroid of a group talking around a table next to a large window"
+    polaroid: true
+
+  - file: "/assets/images/photos/autumn-long-table.webp"
+    title: "long_table.jpg"
+    caption: "Autumn Open Event"
+    alt: "Polaroid of six people talking around a long table in a meeting room"
+    polaroid: true
+
+  - file: "/assets/images/photos/faceoff-inspo.webp"
+    title: "inspo.jpg"
+    caption: "Face/Off: Adversarial Drag"
+    alt: "Polaroid of three people posing in front of a board of face paint ideas, one in white drag make-up"
+    polaroid: true
+
+  - file: "/assets/images/photos/faceoff-make-up-table.webp"
+    title: "make_up_table.jpg"
+    caption: "Face/Off: Adversarial Drag"
+    alt: "Polaroid of three people at a table covered in make-up and craft materials"
+    polaroid: true
+
+  - file: "/assets/images/photos/dsday-intro.webp"
+    title: "this_morning.ppt"
+    caption: "Starting Queering Data Biographies at the AI & Data Science Day"
+    alt: "Siân introducing the workshop in a lecture room, next to a slide that begins This morning"
+
+work:
+  - file: "/assets/images/photos/dsday-worksheet-beyleveld.webp"
+    title: "worksheet.jpg"
+    caption: "Queering Data Biographies"
+    credit: "Photo: Jaap Beyleveld"
+    alt: "A participant leaning over a worksheet with a pen, smiling, with another participant behind"
+
+  - file: "/assets/images/photos/dsday-wall-beyleveld.webp"
+    title: "on_the_wall.jpg"
+    caption: "Putting the body maps up"
+    credit: "Photo: Jaap Beyleveld"
+    alt: "A participant pointing up at worksheets on the wall while others look on"
+
+  - file: "/assets/images/photos/dsday-persona.webp"
+    title: "snapy.txt"
+    caption: "A persona and their data biography"
+    alt: "A Queering Data Biographies body map worksheet next to a pink sticky note describing a persona"
+
+  - file: "/assets/images/photos/dsday-laptop-pair.webp"
+    title: "profiling.exe"
+    caption: "Running the profiling machine"
+    alt: "Two participants looking at a laptop on a table, with body maps on the wall behind"
+
+  - file: "/assets/images/photos/dsday-laptop-sheets.webp"
+    title: "worksheets.jpg"
+    caption: "Laptop and worksheets"
+    alt: "A laptop next to filled-in body map worksheets on a table"
+
+  - file: "/assets/images/photos/faceoff-workshop-room.webp"
+    title: "workshop_room.jpg"
+    caption: "A QFIN workshop in progress"
+    alt: "Polaroid of people working around tables with paper and make-up, with sticky notes on the wall behind"
+    polaroid: true
+
+involved:
+  - file: "/assets/images/photos/faceoff-mask.webp"
+    title: "mask.jpg"
+    caption: "Face/Off: Adversarial Drag"
+    alt: "Polaroid of three people at a workshop table, one holding a white face shape up to their eye"
+    polaroid: true
+
+  - file: "/assets/images/photos/faceoff-face-paint.webp"
+    title: "face_paint.jpg"
+    caption: "Face/Off: Adversarial Drag"
+    alt: "Polaroid of a person with face paint gesturing at a workshop table, with two people laughing behind"
+    polaroid: true
+
+  - file: "/assets/images/photos/faceoff-portrait.webp"
+    title: "portrait.jpg"
+    caption: "At a QFIN workshop"
+    alt: "Polaroid of a person in a denim jacket smiling at the camera, with people talking behind"
+    polaroid: true
+
+  - file: "/assets/images/photos/autumn-machine-glow.webp"
+    title: "glow.jpg"
+    caption: "A demo at the Autumn Open Event"
+    alt: "Polaroid of a clear acrylic machine with small screens, lit with red and pink light"
+    polaroid: true
+
+  - file: "/assets/images/photos/dsday-verdict.webp"
+    title: "verdict.exe"
+    caption: "The profiling machine's verdict"
+    alt: "A laptop screen showing the workshop's profiling tool and its verdict"

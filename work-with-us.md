@@ -30,6 +30,8 @@ permalink: /work-with-us/
     </div>
   </div>
 
+  {% include popup-gallery.html set="work" label="Photos from QFIN workshops" %}
+
   <div class="qfin-section" id="request-a-workshop">
     <h2>Request a Workshop</h2>
     <p class="qfin-subtle">

@@ -982,3 +982,13 @@ a.qfin-cta h3, a.qfin-sponsor .qfin-sponsor-name { font-family: var(--w-font) !i
 .w98-btn[data-w98-close] { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='14' viewBox='0 0 16 14'%3E%3Crect width='16' height='14' fill='%23000'/%3E%3Crect width='15' height='13' fill='%236d6a80'/%3E%3Crect x='1' y='1' width='14' height='12' fill='%230b0a10'/%3E%3Crect x='1' y='1' width='13' height='11' fill='%233a3846'/%3E%3Crect x='2' y='2' width='12' height='10' fill='%231b1a22'/%3E%3Cpath d='M4.5 3.5l6 6M10.5 3.5l-6 6' stroke='%23ece9f5' stroke-width='1.6'/%3E%3C/svg%3E"); }
 .w98-btn:active { border: 0; box-shadow: none; transform: translate(1px, 1px); }
 .w98-btn:focus-visible { outline: 1px dotted #fff; outline-offset: 1px; }
+
+/* ---- Photo rows on every page ---- */
+.w98-floaters { align-items: flex-start; }
+.w98-window--polaroid .w98-body {
+  background: #16141f;
+  padding: 10px;
+}
+.w98-window--polaroid .w98-body img { filter: drop-shadow(2px 3px 3px rgba(0,0,0,0.55)); }
+.w98-statusbar .w98-credit { margin-top: 2px; color: #a9a6ba; }
+.w98-floaters .w98-window.is-max { max-width: none; }

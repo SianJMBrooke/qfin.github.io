@@ -1,11 +1,14 @@
 {% comment %}
-  Launch photos, each in its own 1998-style pop-up window.
+  Photos, each in its own 1998-style pop-up window, in a row.
+  Usage: {% include popup-gallery.html set="about" %} (default set: home)
   Data: _data/gallery.yml. Behaviour: /assets/js/w98.js
 {% endcomment %}
-{% if site.data.gallery and site.data.gallery.size > 0 %}
-<div class="w98-floaters" data-w98-floaters aria-label="Photos from the QFIN launch">
-  {% for p in site.data.gallery %}
-  <div class="w98-window side-{{ p.side | default: 'left' }}" style="--top: {{ p.top | default: 0 }}px;" data-w98-window data-w98-title="{{ p.title }}">
+{% assign gallery_set = include.set | default: "home" %}
+{% assign photos = site.data.gallery[gallery_set] %}
+{% if photos and photos.size > 0 %}
+<div class="w98-floaters" data-w98-floaters aria-label="{{ include.label | default: 'Photos from QFIN events' }}">
+  {% for p in photos %}
+  <div class="w98-window{% if p.polaroid %} w98-window--polaroid{% endif %}" data-w98-window data-w98-title="{{ p.title }}">
     <div class="w98-titlebar" data-w98-handle>
       <span class="w98-title">{{ p.title }}</span>
       <span class="w98-controls">
@@ -18,7 +21,7 @@
     <div class="w98-body">
       <img src="{{ p.file | relative_url }}" alt="{{ p.alt }}" loading="lazy" draggable="false">
     </div>
-    <div class="w98-statusbar"><span>{{ p.caption }}</span></div>
+    <div class="w98-statusbar"><span>{{ p.caption }}</span>{% if p.credit %}<span class="w98-credit">{{ p.credit }}</span>{% endif %}</div>
   </div>
   {% endfor %}
 </div>

@@ -26,6 +26,8 @@ QFIN is based in Amsterdam, the Netherlands. Most events take place in Lab42 at 
 </p>
   </div>
 
+  {% include popup-gallery.html set="about" label="Photos from QFIN events" %}
+
   <div class="qfin-section">
     <h2>Sponsors</h2>
     <p class="qfin-subtle">QFIN is supported by:</p>

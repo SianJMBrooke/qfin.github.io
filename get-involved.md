@@ -53,6 +53,8 @@ permalink: /get-involved/
     </div>
   </div>
 
+  {% include popup-gallery.html set="involved" label="Photos from QFIN workshops" %}
+
   <div class="qfin-section">
     <h2>Take on a Role</h2>
     <p class="qfin-subtle">

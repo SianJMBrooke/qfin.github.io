@@ -38,6 +38,8 @@ permalink: /events/
   </div>
   {% endif %}
 
+  {% include popup-gallery.html set="events" label="Photos from past QFIN events" %}
+
   <div class="qfin-section">
     <h2>Past Events</h2>
     {% assign past_events = site.data.events | sort: "date" | reverse %}
