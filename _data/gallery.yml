@@ -9,31 +9,42 @@
 # Photos have had their location data removed. Only add photos that people
 # in them have agreed to.
 
+
 home:
-  - file: "/assets/images/launch/launch-atrium.jpg"
-    title: "atrium.jpg"
-    caption: "Setting up in the Lab42 atrium"
-    alt: "Round tables with black tablecloths set out in the Lab42 atrium, with a green plant wall behind"
+  - file: "/assets/images/photos/faceoff-inspo.webp"
+    title: "inspo.jpg"
+    caption: "Face/Off: Adversarial Drag"
+    alt: "Polaroid of three people posing in front of a board of face paint ideas, one in white drag make-up"
+    polaroid: true
+
+  - file: "/assets/images/photos/dsday-worksheet-beyleveld.webp"
+    title: "worksheet.jpg"
+    caption: "Queering Data Biographies"
+    credit: "Photo: Jaap Beyleveld"
+    alt: "A participant leaning over a worksheet with a pen, smiling, with another participant behind"
+
+  - file: "/assets/images/photos/faceoff-drag-is-old-tech.webp"
+    title: "drag_is_old_tech.bmp"
+    caption: "Drag is old technology"
+    alt: "Polaroid of three people posing in front of a screen that reads Drag is old technology"
+    polaroid: true
 
   - file: "/assets/images/launch/launch-vulvas.jpg"
     title: "vulvas.jpg"
     caption: "Rainbow 3D-printed vulvas"
     alt: "Rainbow-coloured 3D-printed vulvas scattered on a black tablecloth"
 
-  - file: "/assets/images/launch/launch-stickers.jpg"
-    title: "stickers.bmp"
-    caption: "Stickers and badges"
-    alt: "A hand holding a red tube next to QFIN stickers and badges on a black tablecloth"
+  - file: "/assets/images/photos/dsday-wall-beyleveld.webp"
+    title: "on_the_wall.jpg"
+    caption: "Putting the body maps up"
+    credit: "Photo: Jaap Beyleveld"
+    alt: "A participant pointing up at worksheets on the wall while others look on"
 
-  - file: "/assets/images/launch/launch-catering.jpg"
-    title: "borrel.jpg"
-    caption: "Snacks for the borrel"
-    alt: "Platters of sandwiches and vegetables on a table"
-
-  - file: "/assets/images/launch/launch-lab42.jpg"
-    title: "lab42_from_above.jpg"
-    caption: "Lab42 from the top floor"
-    alt: "The Lab42 atrium seen from an upper floor, with tables and plants below"
+  - file: "/assets/images/photos/faceoff-mask.webp"
+    title: "mask.jpg"
+    caption: "Face/Off: Adversarial Drag"
+    alt: "Polaroid of three people at a workshop table, one holding a white face shape up to their eye"
+    polaroid: true
 
 about:
   - file: "/assets/images/photos/autumn-queergen-poster.webp"
@@ -42,11 +53,10 @@ about:
     alt: "Polaroid of a research poster titled QUEERGEN, on how language models reflect societal norms on gender and sexuality"
     polaroid: true
 
-  - file: "/assets/images/photos/faceoff-drag-is-old-tech.webp"
-    title: "drag_is_old_tech.bmp"
-    caption: "Drag is old technology"
-    alt: "Polaroid of three people posing in front of a screen that reads Drag is old technology"
-    polaroid: true
+  - file: "/assets/images/launch/launch-stickers.jpg"
+    title: "stickers.bmp"
+    caption: "Stickers and badges"
+    alt: "A hand holding a red tube next to QFIN stickers and badges on a black tablecloth"
 
   - file: "/assets/images/photos/autumn-error-screen.webp"
     title: "identity_not_verified.exe"
@@ -66,6 +76,11 @@ about:
     alt: "Hand-drawn body map worksheets and blue sticky notes pinned to a white wall"
 
 events:
+  - file: "/assets/images/launch/launch-atrium.jpg"
+    title: "atrium.jpg"
+    caption: "Setting up in the Lab42 atrium"
+    alt: "Round tables with black tablecloths set out in the Lab42 atrium, with a green plant wall behind"
+
   - file: "/assets/images/photos/autumn-table-talk.webp"
     title: "queering_the_table.jpg"
     caption: "Discussion tables at the Autumn Open Event"
@@ -78,12 +93,6 @@ events:
     alt: "Polaroid of six people talking around a long table in a meeting room"
     polaroid: true
 
-  - file: "/assets/images/photos/faceoff-inspo.webp"
-    title: "inspo.jpg"
-    caption: "Face/Off: Adversarial Drag"
-    alt: "Polaroid of three people posing in front of a board of face paint ideas, one in white drag make-up"
-    polaroid: true
-
   - file: "/assets/images/photos/faceoff-make-up-table.webp"
     title: "make_up_table.jpg"
     caption: "Face/Off: Adversarial Drag"
@@ -94,6 +103,11 @@ events:
     title: "this_morning.ppt"
     caption: "Starting Queering Data Biographies at the AI & Data Science Day"
     alt: "Siân introducing the workshop in a lecture room, next to a slide that begins This morning"
+
+  - file: "/assets/images/launch/launch-lab42.jpg"
+    title: "lab42_from_above.jpg"
+    caption: "Lab42 from the top floor"
+    alt: "The Lab42 atrium seen from an upper floor, with tables and plants below"
 
 work:
   - file: "/assets/images/photos/dsday-worksheet-beyleveld.webp"
@@ -130,11 +144,10 @@ work:
     polaroid: true
 
 involved:
-  - file: "/assets/images/photos/faceoff-mask.webp"
-    title: "mask.jpg"
-    caption: "Face/Off: Adversarial Drag"
-    alt: "Polaroid of three people at a workshop table, one holding a white face shape up to their eye"
-    polaroid: true
+  - file: "/assets/images/launch/launch-catering.jpg"
+    title: "borrel.jpg"
+    caption: "Snacks for the borrel"
+    alt: "Platters of sandwiches and vegetables on a table"
 
   - file: "/assets/images/photos/faceoff-face-paint.webp"
     title: "face_paint.jpg"
