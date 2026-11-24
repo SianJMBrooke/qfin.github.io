@@ -46,10 +46,13 @@
 - name: "Mae Sosto"
   pronouns: "they/them"
   role: "Founding member"
-  responsibilities: []
-  contact_about: ""
+  responsibilities:
+    - "Helping out at events and picking up tasks where needed"
+    - "Ideas for events on queer NLP and language models"
+    - "Links between QFIN and researchers at CWI"
+  contact_about: "Volunteering and picking up tasks."
   email: "mae.sosto@cwi.nl"
-  position: "Junior Researcher, Centrum Wiskunde & Informatica (CWI)"
+  position: "PhD Candidate, Human-Centered Data Analytics, Centrum Wiskunde & Informatica (CWI)"
   profile: "https://www.cwi.nl/en/people/mae-sosto/"
   image: "/assets/images/mae.jpeg"
 
